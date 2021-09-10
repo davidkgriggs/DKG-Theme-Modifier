@@ -1,0 +1,9 @@
+AddonId: DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520
+Packages:
+  - Version: 2.0.0
+    RequiredApiVersion: 6.0.0
+    ReleaseDate: 2021-09-10
+    PackageUrl: 
+    Changelog:
+      - Playnite 9 support
+      - Playnite Modern UI Theme support
