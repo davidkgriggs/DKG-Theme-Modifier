@@ -80,7 +80,6 @@ namespace DKGThemeModifier
 
         //Trailers
         public bool Trailers_PlayniteModernUI { get; set; } = true;
-        public bool Trailers_AudioON_PlayniteModernUI { get; set; } = true;
 
         //FilterPresets
         public double FilterFontSmall_PlayniteModernUI { get; set; } = 20;
@@ -93,6 +92,51 @@ namespace DKGThemeModifier
 
         //MainLogo
         public bool MainLogo_PlayniteModernUI { get; set; } = false;
+        //###############################################################################################################
+        //###############################################################################################################
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //PS5ish
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public bool IsThemeInstalled_PS5ish { get; set; } = false;
+        public string IsThemeInstalledHeader_PS5ish { get; set; } = "";
+
+        //SingleRowMode
+        public bool SingleRowMode_PS5ish { get; set; } = false;
+
+        //TurnOnAndOff
+        public bool LeftLogo_PS5ish { get; set; } = true;
+        public bool RightInfo_PS5ish { get; set; } = true;
+        public bool StoreLogo_PS5ish { get; set; } = true;
+        public bool DisableGameBackgroundOnGrid_PS5ish { get; set; } = true;
+        public bool GridBackground_PS5ish { get; set; } = true;
+
+
+        //StoreButton
+        public bool StoreButton_PS5ish { get; set; } = true;
+        public string PS5ish_StoreWebsite { get; set; } = "https://store.playstation.com/en-gb/";
+
+        //ThemeIntro
+        public bool ThemeIntro_PS5ish { get; set; } = false;
+        public int IntroLength_PS5ish { get; set; } = 1;
+        public bool IntroVideo_PS5ish { get; set; } = false;
+        public bool IntroVideoVolume_PS5ish { get; set; } = true;
+
+        //Labels
+        public string PlayGameLabel_PS5ish { get; set; } = "Game";
+        public string GameLabel_PS5ish { get; set; } = "Games";
+        public string MediaLabel_PS5ish { get; set; } = "{DynamicResource LOCMediaLabel}";
+        public string ProgressLabel_PS5ish { get; set; } = "{DynamicResource LOCSuccessStoryProgress}";
+        public string EarnedLabel_PS5ish { get; set; } = "{DynamicResource LOCSuccessStoryEarned}";
+
+        //Scale
+        public bool ScaleSmall_PS5ish { get; set; } = true;
+        public bool ScaleMedium_PS5ish { get; set; } = false;
+        public bool ScaleLarge_PS5ish { get; set; } = false;
+
+        //Trailers
+        public bool Trailers_PS5ish { get; set; } = true;
+
         //###############################################################################################################
         //###############################################################################################################
 

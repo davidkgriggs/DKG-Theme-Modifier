@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConstantsEdit.cs" />
+    <Compile Include="Controls\PS5ish_StoreButton.xaml.cs">
+      <DependentUpon>PS5ish_StoreButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DKGThemeModifier.cs" />
     <Compile Include="DKGThemeModifierSettings.cs" />
     <Compile Include="DKGThemeModifierSettingsView.xaml.cs">
@@ -63,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\PS5ish_StoreButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DKGThemeModifierSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -74,25 +81,66 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\PS5ishDefault_Main.jpg" />
-    <Content Include="Images\PS5ishPure_GameDetails.jpg" />
-    <Content Include="Images\PS5ishPure_Main.jpg" />
-    <Content Include="Images\PS5ish_BottomText.png" />
-    <Content Include="Images\PS5ish_GameDetails.jpg" />
-    <Content Include="Images\PS5ish_GameDetails_GameDescription.png" />
-    <Content Include="Images\PS5ish_GameDetails_GameDetails.png" />
-    <Content Include="Images\PS5ish_GameDetails_None.jpg" />
-    <Content Include="Images\PS5ish_LeftLogo.png" />
-    <Content Include="Images\PS5ish_Main_LeftLogo.png" />
-    <Content Include="Images\PS5ish_Main_None.jpg" />
-    <Content Include="Images\PS5ish_Main_RightImage.png" />
-    <Content Include="Images\PS5ish_Main_RightInfo.png" />
-    <Content Include="Images\PS5ish_Main_Title.png" />
-    <Content Include="Images\PS5ish_PlayniteTabs.png" />
-    <Content Include="Images\PS5ish_RightImage.png" />
-    <Content Include="Images\PS5ish_RightInfo.png" />
-    <Content Include="Images\PS5ish_StoreIcon.png" />
-    <Content Include="Images\PS5ish_Title.png" />
+    <Resource Include="Controls\Images\PlaystationStore.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ishDefault_Main.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ishPure_GameDetails.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ishPure_Main.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_BottomText.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_GameDetails.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_GameDetails_GameDescription.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_GameDetails_GameDetails.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_GameDetails_None.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_LeftLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_Main_LeftLogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_Main_None.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_Main_RightImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_Main_RightInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_Main_Title.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_PlayniteTabs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_RightImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_RightInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_StoreIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PS5ish_Title.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,101 @@
+﻿<PluginUserControl x:Class="DKGThemeModifier.PS5ish_StoreButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DKGThemeModifier"
+             xmlns:sdk="clr-namespace:Playnite.SDK.Controls;assembly=Playnite.SDK"
+             mc:Ignorable="d">
+    <Grid>
+        <Button Click="button1_Click" >
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                    <Setter Property="SnapsToDevicePixels" Value="True" />
+                    <Setter Property="VerticalAlignment" Value="Top" />
+                    <Setter Property="Visibility" Value="Visible"/>
+                    <Setter Property="Opacity" Value="1"/>
+                    <Setter Property="Width" Value="105"/>
+                    <Setter Property="Height" Value="105"/>
+                    <Setter Property="MaxHeight" Value="115"/>
+                    <Setter Property="MaxWidth" Value="115"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <ControlTemplate.Resources>
+                                    <Storyboard x:Key="FocusedOn">
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX" From="1" To="1.6" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY" From="1" To="1.6" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                    <Storyboard x:Key="FocusedOff">
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX" From="1.6" To="1" Duration="0:0:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY" From="1.6" To="1" Duration="0:0:0.2"/>
+                                    </Storyboard>
+
+                                    <Storyboard x:Key="MoreGamesFocus" RepeatBehavior="Forever">
+                                        <ColorAnimation From="#33000000" To="#BFEAD3CF" Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="MainBorder" Duration="0:0:2.00" AutoReverse="True"/>
+                                    </Storyboard>
+                                    <Storyboard x:Key="IsClickedOpacity099">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.Opacity)">
+                                            <DiscreteDoubleKeyFrame  KeyTime="00:00:00.1" Value="0.99"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                    <Storyboard x:Key="IsClickedOpacity1">
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.Opacity)">
+                                            <DiscreteDoubleKeyFrame  KeyTime="00:00:00.1" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </ControlTemplate.Resources>
+                                <Grid Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0,0">
+                                    <Grid.RenderTransform>
+                                        <ScaleTransform x:Name="ScaleTransform" ScaleX="1" ScaleY="1" />
+                                    </Grid.RenderTransform>
+                                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <Border Background="#80100100" CornerRadius="18"/>
+                                        <Image x:Name="StorePNG" RenderOptions.BitmapScalingMode="Fant" Width="105" Source="/DKGThemeModifier;component/Controls/Images/PlaystationStore.png" />
+                                        <Border Name="MainBorder" BorderThickness="1.55" BorderBrush="White" Height="111" Width="111" Margin="-3" Visibility="Collapsed" CornerRadius="20"/>
+                                    </Grid>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsFocused" Value="True">
+                                        <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                                        <Trigger.EnterActions>
+                                            <BeginStoryboard Storyboard="{StaticResource MoreGamesFocus}" />
+                                            <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                                        </Trigger.EnterActions>
+                                        <Trigger.ExitActions>
+                                            <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                                        </Trigger.ExitActions>
+                                    </Trigger>
+
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                                        <Trigger.EnterActions>
+                                            <BeginStoryboard Storyboard="{StaticResource MoreGamesFocus}" />
+                                            <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                                        </Trigger.EnterActions>
+                                        <Trigger.ExitActions>
+                                            <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                                        </Trigger.ExitActions>
+                                    </Trigger>
+
+                                    <DataTrigger Binding="{Binding ElementName=MoreGames, Path=IsFocused}" Value="True">
+                                        <Setter Property="Focusable" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=MoreGames, Path=IsKeyboardFocusWithin}" Value="True">
+                                        <Setter Property="Focusable" Value="False"/>
+                                    </DataTrigger>
+
+                                    <!--DataTrigger Binding="{Binding ElementName=PART_ListGameItems, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="Focusable" Value="True"/>
+                                    </DataTrigger-->
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</PluginUserControl>
