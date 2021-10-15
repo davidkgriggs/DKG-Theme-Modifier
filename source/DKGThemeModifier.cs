@@ -10,6 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using Microsoft.Win32;
+using System.Windows;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace DKGThemeModifier
 {
@@ -17,14 +21,12 @@ namespace DKGThemeModifier
     {
         private static readonly ILogger logger = LogManager.GetLogger();
 
-        //private DKGThemeModifierSettingsViewModel settings { get; set; }
         private DKGThemeModifierSettingsViewModel settings { get; set; }
 
         public override Guid Id { get; } = Guid.Parse("ee4ed2de-7e02-4447-8441-685d320b0520");
 
         public DKGThemeModifier(IPlayniteAPI api) : base(api)
         {
-            //settings = new DKGThemeModifierSettingsViewModel(this);
             settings = new DKGThemeModifierSettingsViewModel(this);
             Properties = new GenericPluginProperties
             {
@@ -33,7 +35,7 @@ namespace DKGThemeModifier
 
             AddCustomElementSupport(new AddCustomElementSupportArgs
             {
-                ElementList = new List<string> { "PS5ish_StoreButton" },
+                ElementList = new List<string> { "PS5ish_StoreButton", "PlayniteModernUI_Options" },
                 SourceName = "DKGThemeModifier",
             });
 
@@ -49,6 +51,10 @@ namespace DKGThemeModifier
             if (args.Name == "PS5ish_StoreButton")
             {
                 return new PS5ish_StoreButton(PlayniteApi, settings);
+            }
+            if (args.Name == "PlayniteModernUI_Options")
+            {
+                return new PlayniteModernUI_Options(PlayniteApi, settings);
             }
 
             return null;
@@ -112,13 +118,10 @@ namespace DKGThemeModifier
             }
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        }
+            
 
-        public override void OnApplicationStopped(OnApplicationStoppedEventArgs args)
-        {
-            // Add code to be executed when Playnite is shutting down.
 
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //PlayniteModernUI
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
             if (settings.Settings.IsThemeInstalled_PlayniteModernUI == true)
@@ -128,16 +131,6 @@ namespace DKGThemeModifier
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 string ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml";
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                //Set Backgrounds + Sounds Locations
-                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                string SoundDestination = PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\9c960604-b8bc-4407-a4e4-e291c6097c7d\Sound Files\PlayniteModernUI";
-                string BackgroundDestination = PlayniteApi.Paths.ConfigurationPath + @"\ExtraMetadata\Themes\Fullscreen\PlayniteModernUI";
-                Directory.CreateDirectory(SoundDestination);
-                Directory.CreateDirectory(BackgroundDestination);
-                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
                 string ReadConstatnts_PlayniteModernUI = File.ReadAllText(ConstantsLocation_PlayniteModernUI);
 
                 //COLOUR PICKER
@@ -166,13 +159,16 @@ namespace DKGThemeModifier
 
                 //ThemeIntro
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "Intro", settings.Settings.ThemeIntro_PlayniteModernUI);
-                string sIntroLength = settings.Settings.IntroLength_PlayniteModernUI.ToString();
-                ConstantsEdit.IntrroLength(ConstantsLocation_PlayniteModernUI, sIntroLength);
+                if (settings.Settings.ThemeIntro_PlayniteModernUI == true)
+                {
+                    string sIntroLength = settings.Settings.IntroLength_PlayniteModernUI.ToString();
+                    ConstantsEdit.IntroLength(ConstantsLocation_PlayniteModernUI, sIntroLength);
+                }
 
                 //ThemeIntroVideo
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "IntroVideo", settings.Settings.IntroVideo_PlayniteModernUI);
                 //TheneIntroVideoVolume
-                ConstantsEdit.IntroVideoVulme(ConstantsLocation_PlayniteModernUI, "IntroVideoVolume", settings.Settings.IntroVideoVolume_PlayniteModernUI);
+                ConstantsEdit.IntroVideoVolume(ConstantsLocation_PlayniteModernUI, "IntroVideoVolume", settings.Settings.IntroVideoVolume_PlayniteModernUI);
 
                 //Banners
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "Banners", settings.Settings.Banners_PlayniteModernUI);
@@ -186,11 +182,6 @@ namespace DKGThemeModifier
                 //Trailers
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "Trailers", settings.Settings.Trailers_PlayniteModernUI);
 
-                //FilterPresets
-                string sFilterShoulderSize = (settings.Settings.FilterFontSmall_PlayniteModernUI * 1.7).ToString("F0", CultureInfo.InvariantCulture);
-                string sFilterFontLarge = (settings.Settings.FilterFontSmall_PlayniteModernUI * 1.1).ToString("F0", CultureInfo.InvariantCulture);
-                ConstantsEdit.FilterPresetSize(ConstantsLocation_PlayniteModernUI, settings.Settings.FilterFontSmall_PlayniteModernUI.ToString(), sFilterFontLarge, sFilterShoulderSize);
-
                 //SideBar
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "SideBanners", settings.Settings.SideBanners_PlayniteModernUI);
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "SideBar", settings.Settings.SideBar_PlayniteModernUI);
@@ -200,8 +191,11 @@ namespace DKGThemeModifier
 
                 //RoundedCorners
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "RoundedCorners", settings.Settings.RoundedCorners_PlayniteModernUI);
-                string sRoundedCorners = settings.Settings.RoundedCornersAmount_PlayniteModernUI.ToString();
-                ConstantsEdit.RoundedCorners(ConstantsLocation_PlayniteModernUI, sRoundedCorners);
+                if (settings.Settings.RoundedCorners_PlayniteModernUI == true)
+                {
+                    string sRoundedCorners = settings.Settings.RoundedCornersAmount_PlayniteModernUI.ToString();
+                    ConstantsEdit.RoundedCorners(ConstantsLocation_PlayniteModernUI, sRoundedCorners);
+                }
             }
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -256,9 +250,8 @@ namespace DKGThemeModifier
                 //ThemeIntro
                 if (ReadConstatnts_PS5ish.Contains("Intro"))
                 {
-                    ConstantsEdit.TrueFalse(ConstantsLocationPS5ish, "Intro", true);
                     string sIntroLength = settings.Settings.IntroLength_PS5ish.ToString();
-                    ConstantsEdit.IntrroLength(ConstantsLocationPS5ish, sIntroLength);
+                    ConstantsEdit.IntroLength(ConstantsLocationPS5ish, sIntroLength);
                 }
 
                 //ThemeIntroVideo
@@ -266,7 +259,7 @@ namespace DKGThemeModifier
                 {
                     ConstantsEdit.TrueFalse(ConstantsLocationPS5ish, "IntroVideo", settings.Settings.IntroVideo_PS5ish);
                     //TheneIntroVideoVolume
-                    ConstantsEdit.IntroVideoVulme(ConstantsLocationPS5ish, "IntroVideoVolume", settings.Settings.IntroVideoVolume_PS5ish);
+                    ConstantsEdit.IntroVideoVolume(ConstantsLocationPS5ish, "IntroVideoVolume", settings.Settings.IntroVideoVolume_PS5ish);
                 }
 
                 //Trailers
@@ -274,9 +267,6 @@ namespace DKGThemeModifier
                 {
                     ConstantsEdit.TrueFalse(ConstantsLocationPS5ish, "Trailers", settings.Settings.Trailers_PS5ish);
                 }
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //Changing Labels
@@ -289,30 +279,6 @@ namespace DKGThemeModifier
                 string PlayGameLabeltextAfter = PS5ishReadPlayGameLabel.Substring(PlayGameLabelend + 1);
                 string PS5ishReadPlayGameLabelReplaced = PlayGameLabeltextBefore + "<!--PGL--><sys:String x:Key=\"PlayGameLabelString\">" + settings.Settings.PlayGameLabel_PS5ish + "<" + PlayGameLabeltextAfter;
                 System.IO.File.WriteAllText(ConstantsLocationPS5ish, PS5ishReadPlayGameLabelReplaced);
-
-                string PS5ishReadGameLabel = System.IO.File.ReadAllText(ConstantsLocationPS5ish);
-                int GameLabelstart = PS5ishReadGameLabel.IndexOf("<!--GL--><sys:String x:Key=\"GameLabelString\">");
-                int GameLabelend = PS5ishReadGameLabel.IndexOf("</sys:String><!--GL-->");
-                string GameLabeltextBefore = PS5ishReadGameLabel.Substring(0, GameLabelstart);
-                string GameLabeltextAfter = PS5ishReadGameLabel.Substring(GameLabelend + 1);
-                string PS5ishReadGameLabelReplaced = GameLabeltextBefore + "<!--GL--><sys:String x:Key=\"GameLabelString\">" + settings.Settings.GameLabel_PS5ish + "<" + GameLabeltextAfter;
-                System.IO.File.WriteAllText(ConstantsLocationPS5ish, PS5ishReadGameLabelReplaced);
-
-                string PS5ishReadMediaLabel = System.IO.File.ReadAllText(ConstantsLocationPS5ish);
-                int MediaLabelstart = PS5ishReadMediaLabel.IndexOf("<TextBlock x:Key=\"MediaLabel\" Text=\"");
-                int MediaLabelend = PS5ishReadMediaLabel.IndexOf("\" Style=\"{DynamicResource TextBlockBaseStyle}\" FontSize=\"36\"></TextBlock>");
-                string MediaLabeltextBefore = PS5ishReadMediaLabel.Substring(0, MediaLabelstart);
-                string MediaLabeltextAfter = PS5ishReadMediaLabel.Substring(MediaLabelend + 1);
-                string PS5ishReadMediaLabelReplaced = MediaLabeltextBefore + "<TextBlock x:Key=\"MediaLabel\" Text=\"" + settings.Settings.MediaLabel_PS5ish + "\"" + MediaLabeltextAfter;
-                System.IO.File.WriteAllText(ConstantsLocationPS5ish, PS5ishReadMediaLabelReplaced);
-
-                string PS5ishReadMediaLabelNEW = System.IO.File.ReadAllText(ConstantsLocationPS5ish);
-                int MediaLabelstartNEW = PS5ishReadMediaLabelNEW.IndexOf("<TextBlock x:Key=\"MediaLabelNEW\" Text=\"");
-                int MediaLabelendNEW = PS5ishReadMediaLabelNEW.IndexOf("\" Style=\"{DynamicResource TextBlockBaseStyle}\" FontSize=\"36\" Foreground=\"#99FFFFFF\"></TextBlock>");
-                string MediaLabeltextBeforeNEW = PS5ishReadMediaLabelNEW.Substring(0, MediaLabelstartNEW);
-                string MediaLabeltextAfterNEW = PS5ishReadMediaLabelNEW.Substring(MediaLabelendNEW + 1);
-                string PS5ishReadMediaLabelReplacedNEW = MediaLabeltextBeforeNEW + "<TextBlock x:Key=\"MediaLabelNEW\" Text=\"" + settings.Settings.MediaLabel_PS5ish + "\"" + MediaLabeltextAfterNEW;
-                System.IO.File.WriteAllText(ConstantsLocationPS5ish, PS5ishReadMediaLabelReplacedNEW);
 
                 string PS5ishReadProgressLabel = System.IO.File.ReadAllText(ConstantsLocationPS5ish);
                 int ProgressLabelstart = PS5ishReadProgressLabel.IndexOf("<!--PL--><Setter Property=\"Text\" Value=\"");
@@ -331,7 +297,13 @@ namespace DKGThemeModifier
                 System.IO.File.WriteAllText(ConstantsLocationPS5ish, PS5ishReadEarnedLabelReplaced);
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            }
+            }*/
+        }
+
+        public override void OnApplicationStopped(OnApplicationStoppedEventArgs args)
+        {
+            // Add code to be executed when Playnite is shutting down.
+           
         }
 
         public override void OnLibraryUpdated(OnLibraryUpdatedEventArgs args)
@@ -342,11 +314,11 @@ namespace DKGThemeModifier
         public override ISettings GetSettings(bool firstRunSettings)
         {
             return settings;
-        }
+        }        
 
         public override UserControl GetSettingsView(bool firstRunSettings)
         {
-            return new DKGThemeModifierSettingsView();
+            return new DKGThemeModifierSettingsView(PlayniteApi, settings);
         }
     }
 }

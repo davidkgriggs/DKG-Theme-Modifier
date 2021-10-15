@@ -61,6 +61,9 @@
                                             </Setter>
                                         </Style>
                                     </StackPanel.Resources>
+                                    <TextBlock Text="Apply Changes" FontSize="22" />
+                                    <Button Click="PlayniteModernUI_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
+
                                     <TextBlock Text="My Colour" FontSize="22" />
                                     <StackPanel Orientation="Horizontal">
                                         <RadioButton IsChecked="{Binding Settings.Colour1_PlayniteModernUI}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_PlayniteModernUI" Style="{DynamicResource ColourPicker_PlayniteModernUIStyle}" Background="#54a81b"/>
@@ -173,13 +176,13 @@
                                         </StackPanel>
                                     </StackPanel>
 
-                                    <TextBlock Text="Filter Presets" FontSize="22" Margin="0,5,0,5"/>
+                                    <!--TextBlock Text="Filter Presets" FontSize="22" Margin="0,5,0,5"/>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="Font Size: " FontSize="16" Margin="0,0,0,5"/>
                                         <TextBlock Text="{Binding Settings.FilterFontSmall_PlayniteModernUI}" FontSize="16" Margin="0,0,0,5"/>
                                     </StackPanel>
                                     <Slider IsSnapToTickEnabled="True" Minimum="16" Maximum="30" Value="{Binding Settings.FilterFontSmall_PlayniteModernUI}" 
-                                            VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="300" Margin="0,0,0,10"/>
+                                            VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="300" Margin="0,0,0,10"/-->
 
 
                                 </StackPanel>
@@ -206,7 +209,9 @@
                         <TabItem Header="General">
                             <ScrollViewer>
                                 <StackPanel Margin="10">
-
+                                    <TextBlock Text="Apply Changes" FontSize="22" />
+                                    <Button Click="PS5ish_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
+                                    
                                     <!--ROW MODE-->
                                     <TextBlock Text="Row Mode" FontSize="22" Margin="0,5,0,5"/>
                                     <StackPanel Tag="{Binding Settings.SingleRowMode_PS5ish}">

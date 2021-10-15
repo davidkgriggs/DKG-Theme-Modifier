@@ -3,9 +3,6 @@ using Playnite.SDK.Controls;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using Path = System.IO.Path;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,21 +15,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace DKGThemeModifier
 {
-    public partial class DKGThemeModifierSettingsView : UserControl
+    class EditThemeFiles
     {
         IPlayniteAPI PlayniteApi; public DKGThemeModifierSettingsViewModel SettingsModel { get; set; }
 
-        public DKGThemeModifierSettingsView(IPlayniteAPI PlayniteApi, DKGThemeModifierSettingsViewModel settings)
+        public EditThemeFiles(IPlayniteAPI PlayniteApi, DKGThemeModifierSettingsViewModel settings)
         {
-            InitializeComponent();
             this.PlayniteApi = PlayniteApi;
             SettingsModel = settings;
         }
 
-        private void PlayniteModernUI_Commit(object sender, EventArgs e)
+        public EditThemeFiles()
+        {
+        }
+
+        public void PerformEdit()
         {
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //PlayniteModernUI
@@ -44,7 +45,7 @@ namespace DKGThemeModifier
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 string ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml";
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                string ReadConstatnts_PlayniteModernUI = File.ReadAllText(ConstantsLocation_PlayniteModernUI);
+                string ReadConstatnts_PlayniteModernUI = System.IO.File.ReadAllText(ConstantsLocation_PlayniteModernUI);
 
                 //COLOUR PICKER
                 if (SettingsModel.Settings.Colour1_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "54A81B"); }
@@ -111,11 +112,6 @@ namespace DKGThemeModifier
                 }
             }
 
-            PlayniteApi.Dialogs.ShowMessage("Changes Applied");
-        }
-
-        private void PS5ish_Commit(object sender, EventArgs e)
-        {
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //PS5ish
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
@@ -215,11 +211,7 @@ namespace DKGThemeModifier
                 System.IO.File.WriteAllText(ConstantsLocationPS5ish, PS5ishReadEarnedLabelReplaced);
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            }
-
-            PlayniteApi.Dialogs.ShowMessage("Changes Applied");
+            }            
         }
-
-
     }
 }

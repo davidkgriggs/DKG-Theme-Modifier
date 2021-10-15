@@ -49,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConstantsEdit.cs" />
+    <Compile Include="Controls\PlayniteModernUI_Options.xaml.cs">
+      <DependentUpon>PlayniteModernUI_Options.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PS5ish_StoreButton.xaml.cs">
       <DependentUpon>PS5ish_StoreButton.xaml</DependentUpon>
     </Compile>
@@ -57,6 +60,7 @@
     <Compile Include="DKGThemeModifierSettingsView.xaml.cs">
       <DependentUpon>DKGThemeModifierSettingsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditThemeFiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\PlayniteModernUI_Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\PS5ish_StoreButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
