@@ -18,6 +18,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
+
 
 namespace DKGThemeModifier
 {
@@ -112,6 +114,16 @@ namespace DKGThemeModifier
             }
 
             PlayniteApi.Dialogs.ShowMessage("Changes Applied");
+        }
+
+        private void PlayniteModernUI_Defaults(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/PlayniteModernUI/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml");
+
+                PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
+            }
         }
 
         private void PS5ish_Commit(object sender, EventArgs e)
@@ -220,6 +232,15 @@ namespace DKGThemeModifier
             PlayniteApi.Dialogs.ShowMessage("Changes Applied");
         }
 
+        private void PS5ish_Defaults(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/PS5ish/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PS5ish_676e10ec-adfe-48d8-a1bd-4d5771b5a2ca\Constants.xaml");
+
+                PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
+            }
+        }
 
     }
 }

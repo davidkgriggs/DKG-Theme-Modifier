@@ -64,6 +64,9 @@
                                     <TextBlock Text="Apply Changes" FontSize="22" />
                                     <Button Click="PlayniteModernUI_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
 
+                                    <TextBlock Text="Restore Defaults" FontSize="22" />
+                                    <Button Click="PlayniteModernUI_Defaults" Content="Restore Defaults" Margin="0,5,0,10"/>
+
                                     <TextBlock Text="My Colour" FontSize="22" />
                                     <StackPanel Orientation="Horizontal">
                                         <RadioButton IsChecked="{Binding Settings.Colour1_PlayniteModernUI}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_PlayniteModernUI" Style="{DynamicResource ColourPicker_PlayniteModernUIStyle}" Background="#54a81b"/>
@@ -211,7 +214,10 @@
                                 <StackPanel Margin="10">
                                     <TextBlock Text="Apply Changes" FontSize="22" />
                                     <Button Click="PS5ish_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
-                                    
+
+                                    <TextBlock Text="Restore Defaults" FontSize="22" />
+                                    <Button Click="PS5ish_Defaults" Content="Restore Defaults" Margin="0,5,0,10"/>
+
                                     <!--ROW MODE-->
                                     <TextBlock Text="Row Mode" FontSize="22" Margin="0,5,0,5"/>
                                     <StackPanel Tag="{Binding Settings.SingleRowMode_PS5ish}">
