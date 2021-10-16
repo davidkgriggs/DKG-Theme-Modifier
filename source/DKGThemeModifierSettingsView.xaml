@@ -179,14 +179,15 @@
                                         </StackPanel>
                                     </StackPanel>
 
-                                    <!--TextBlock Text="Filter Presets" FontSize="22" Margin="0,5,0,5"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Font Size: " FontSize="16" Margin="0,0,0,5"/>
-                                        <TextBlock Text="{Binding Settings.FilterFontSmall_PlayniteModernUI}" FontSize="16" Margin="0,0,0,5"/>
+                                    <TextBlock Text="Game Description" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Width="200" Text="Game Description:"/>
+                                                <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.DescriptionOnOff_PlayniteModernUI}"/>
+                                            </StackPanel>
+                                        </StackPanel>
                                     </StackPanel>
-                                    <Slider IsSnapToTickEnabled="True" Minimum="16" Maximum="30" Value="{Binding Settings.FilterFontSmall_PlayniteModernUI}" 
-                                            VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="300" Margin="0,0,0,10"/-->
-
 
                                 </StackPanel>
                             </ScrollViewer>

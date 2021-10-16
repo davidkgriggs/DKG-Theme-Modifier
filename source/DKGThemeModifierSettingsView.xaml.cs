@@ -111,6 +111,9 @@ namespace DKGThemeModifier
                     string sRoundedCorners = SettingsModel.Settings.RoundedCornersAmount_PlayniteModernUI.ToString();
                     ConstantsEdit.RoundedCorners(ConstantsLocation_PlayniteModernUI, sRoundedCorners);
                 }
+
+                //DescriptionOnOff
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "DescriptionOnOff", SettingsModel.Settings.DescriptionOnOff_PlayniteModernUI);
             }
 
             PlayniteApi.Dialogs.ShowMessage("Changes Applied");

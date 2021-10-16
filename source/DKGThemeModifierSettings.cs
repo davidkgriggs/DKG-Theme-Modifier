@@ -92,6 +92,9 @@ namespace DKGThemeModifier
 
         //MainLogo
         public bool MainLogo_PlayniteModernUI { get; set; } = false;
+
+        //DescriptionOnOff
+        public bool DescriptionOnOff_PlayniteModernUI { get; set; } = true;
         //###############################################################################################################
         //###############################################################################################################
 
