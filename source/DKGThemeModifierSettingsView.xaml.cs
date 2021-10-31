@@ -114,6 +114,9 @@ namespace DKGThemeModifier
 
                 //DescriptionOnOff
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "DescriptionOnOff", SettingsModel.Settings.DescriptionOnOff_PlayniteModernUI);
+
+                //FilterPresetsVertical
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "FilterPresetVertical", SettingsModel.Settings.FilterPresetsVertical_PlayniteModernUI);
             }
 
             PlayniteApi.Dialogs.ShowMessage("Changes Applied");

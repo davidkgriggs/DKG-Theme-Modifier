@@ -39,3 +39,9 @@ Packages:
     PackageUrl: https://github.com/davidkgriggs/DKG-Theme-Modifier/releases/download/v2.2.3/DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520_2_2_3.pext
     Changelog:
       - Updated PS5ish Store Button style
+  - Version: 2.2.4
+    RequiredApiVersion: 6.0.0
+    ReleaseDate: 2021-10-31
+    PackageUrl: https://github.com/davidkgriggs/DKG-Theme-Modifier/releases/download/v2.2.4/DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520_2_2_4.pext
+    Changelog:
+      - Added button for Playnite Modern UI to change the Filter Presets from Vertical to Horizontal

@@ -46,6 +46,82 @@
                                             <DiscreteDoubleKeyFrame  KeyTime="00:00:00.1" Value="1"/>
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
+
+                                    <!-- CoverBorder -->
+                                    <Style x:Key="AnimatedCoverBrush" TargetType="Border">
+                                        <Setter Property="BorderBrush">
+                                            <Setter.Value>
+                                                <LinearGradientBrush>
+                                                    <GradientStop Color="#802a3039" Offset="0"/>
+                                                    <GradientStop Color="#a2899d" Offset="0.80"/>
+                                                    <GradientStop Color="#dbbda1" Offset="1"/>
+                                                    <LinearGradientBrush.RelativeTransform>
+                                                        <RotateTransform CenterX="0.5" CenterY="0.5" />
+                                                    </LinearGradientBrush.RelativeTransform>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True"/>
+                                                    <Condition Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=IsActive}" Value="True"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <MultiDataTrigger.EnterActions>
+                                                    <BeginStoryboard x:Name="BeginAnim">
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.1" Duration="0:0:0.3" />
+                                                            <DoubleAnimation Storyboard.TargetProperty="(Border.BorderBrush).(Brush.RelativeTransform).(RotateTransform.Angle)" 
+											 From="0" To="359" Duration="00:00:4" RepeatBehavior="Forever" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </MultiDataTrigger.EnterActions>
+                                                <MultiDataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                    <RemoveStoryboard BeginStoryboardName="BeginAnim"/>
+                                                </MultiDataTrigger.ExitActions>
+                                            </MultiDataTrigger>
+
+                                        </Style.Triggers>
+                                    </Style>
+                                    
+                                    <Style x:Key="AnimatedFlashCover" TargetType="Border">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush>
+                                                    <GradientStop Color="#00000000 " Offset="0"/>
+                                                    <GradientStop Color="#40ffffff" Offset="0.01"/>
+                                                    <GradientStop Color="#40ffffff" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True"/>
+                                                    <Condition Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=IsActive}" Value="True"/>
+                                                </MultiDataTrigger.Conditions>
+                                                <MultiDataTrigger.EnterActions>
+                                                    <BeginStoryboard x:Name="BeginAnim">
+                                                        <Storyboard RepeatBehavior="Forever" Duration="0:0:4.5">
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2" />
+                                                            <DoubleAnimation
+							Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+							From="0" To="1" Duration="0:0:0.6" />
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" BeginTime="0:0:0.6" Duration="0:0:0.3" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </MultiDataTrigger.EnterActions>
+                                                <MultiDataTrigger.ExitActions>
+                                                    <RemoveStoryboard BeginStoryboardName="BeginAnim"/>
+                                                </MultiDataTrigger.ExitActions>
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
                                 </ControlTemplate.Resources>
                                 <Grid Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0,0">
                                     <Grid.RenderTransform>
@@ -54,14 +130,19 @@
                                     <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
                                         <Border Background="#80100100" CornerRadius="18"/>
                                         <Image x:Name="StorePNG" RenderOptions.BitmapScalingMode="Fant" Width="105" Source="/DKGThemeModifier;component/Controls/Images/PlaystationStore.png" />
-                                        <Border Name="MainBorder" BorderThickness="1.55" BorderBrush="White" Height="111" Width="111" Margin="-3" Visibility="Collapsed" CornerRadius="20"/>
+                                        <Border x:Name="MainBorder" Opacity="1" BorderThickness="1.55" CornerRadius="20" Width="111" Height="111" Margin="-3" Style="{DynamicResource AnimatedCoverBrush}" Visibility="Hidden" >
+                                        </Border>
+                                        <Border x:Name="FlashBorder" CornerRadius="20" Opacity="1" Width="105" Height="105" Style="{DynamicResource AnimatedFlashCover}"  Visibility="Hidden">
+                                        </Border>
                                     </Grid>
                                 </Grid>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsFocused" Value="True">
                                         <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                                        <Setter Property="Visibility" Value="Visible" TargetName="FlashBorder" />
+                                        <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                                        <Setter Property="Tag" Value="True" TargetName="FlashBorder" />
                                         <Trigger.EnterActions>
-                                            <BeginStoryboard Storyboard="{StaticResource MoreGamesFocus}" />
                                             <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
                                         </Trigger.EnterActions>
                                         <Trigger.ExitActions>
@@ -70,9 +151,11 @@
                                     </Trigger>
 
                                     <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                                        <Setter Property="Tag" Value="True" TargetName="FlashBorder" />
                                         <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                                        <Setter Property="Visibility" Value="Visible" TargetName="FlashBorder" />
                                         <Trigger.EnterActions>
-                                            <BeginStoryboard Storyboard="{StaticResource MoreGamesFocus}" />
                                             <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
                                         </Trigger.EnterActions>
                                         <Trigger.ExitActions>

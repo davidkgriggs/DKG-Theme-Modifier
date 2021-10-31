@@ -116,6 +116,15 @@
                                         <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.IntroVideoVolume_PlayniteModernUI}"/>
                                     </StackPanel>
 
+                                    <TextBlock Text="Filter Presets" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Width="200" Text="Filter Presets Vertical:"/>
+                                                <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.FilterPresetsVertical_PlayniteModernUI}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
 
                                     <TextBlock Text="Title/Logo" FontSize="22" Margin="0,5,0,5"/>
                                     <StackPanel>

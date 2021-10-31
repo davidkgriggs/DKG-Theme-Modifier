@@ -95,6 +95,9 @@ namespace DKGThemeModifier
 
         //DescriptionOnOff
         public bool DescriptionOnOff_PlayniteModernUI { get; set; } = true;
+
+        //FilterPresetsVertical
+        public bool FilterPresetsVertical_PlayniteModernUI { get; set; } = true;
         //###############################################################################################################
         //###############################################################################################################
 
