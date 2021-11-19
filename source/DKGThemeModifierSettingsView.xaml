@@ -400,17 +400,39 @@
                                     <StackPanel>
                                         <!--CHANGING LABELS-->
                                         <StackPanel Orientation="Horizontal">
-                                            <TextBlock Width="150" Margin="0,0,0,0" Text="Play Game Label:"/>
-                                            <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.PlayGameLabel_PS5ish}"/>
+                                            <TextBlock Width="250" Text="Defaults:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.LabelDefaults_PS5ish}"/>
                                         </StackPanel>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Width="150" Margin="0,0,0,0" Text="Progress Label:"/>
-                                            <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.ProgressLabel_PS5ish}"/>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Width="150" Margin="0,0,0,0" Text="Earned Label:"/>
-                                            <TextBox Width="400" Height="25" Text="{Binding Settings.EarnedLabel_PS5ish}"/>
-                                        </StackPanel>
+                                        <Grid>
+                                            <Grid.Style>
+                                                <Style TargetType="Grid">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Settings.LabelDefaults_PS5ish}" Value="True">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Grid.Style>
+                                            <StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Width="150" Margin="0,0,0,0" Text="Play Label:"/>
+                                                    <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.PlayLabel_PS5ish}"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Width="150" Margin="0,0,0,0" Text="Play Game Label:"/>
+                                                    <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.PlayGameLabel_PS5ish}"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Width="150" Margin="0,0,0,0" Text="Progress Label:"/>
+                                                    <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.ProgressLabel_PS5ish}"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Width="150" Margin="0,0,0,0" Text="Earned Label:"/>
+                                                    <TextBox Width="400" Height="25" Text="{Binding Settings.EarnedLabel_PS5ish}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Grid>
                                     </StackPanel>
                                 </StackPanel>
                             </ScrollViewer>

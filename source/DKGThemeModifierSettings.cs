@@ -129,6 +129,8 @@ namespace DKGThemeModifier
         public bool IntroVideoVolume_PS5ish { get; set; } = true;
 
         //Labels
+        public bool LabelDefaults_PS5ish { get; set; } = true;
+        public string PlayLabel_PS5ish { get; set; } = "{DynamicResource LOCPlayGame}";
         public string PlayGameLabel_PS5ish { get; set; } = "Game";
         public string GameLabel_PS5ish { get; set; } = "Games";
         public string MediaLabel_PS5ish { get; set; } = "{DynamicResource LOCMediaLabel}";

@@ -207,7 +207,24 @@ namespace DKGThemeModifier
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //Changing Labels
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //Defaults
+                if (SettingsModel.Settings.LabelDefaults_PS5ish == true)
+                {
+                    SettingsModel.Settings.PlayLabel_PS5ish = "{DynamicResource LOCPlayGame}";
+                    SettingsModel.Settings.PlayGameLabel_PS5ish = "Game";
+                    SettingsModel.Settings.ProgressLabel_PS5ish = "{DynamicResource LOCSuccessStoryProgress}";
+                    SettingsModel.Settings.EarnedLabel_PS5ish = "{DynamicResource LOCSuccessStoryEarned}";
+                }
+                
                 //Labels
+                string PS5ishReadPlayLabel = System.IO.File.ReadAllText(ConstantsLocationPS5ish);
+                int PlayLabelstart = PS5ishReadPlayLabel.IndexOf("<!--PYL--><Setter Property=\"Text\" Value=\"");
+                int PlayLabelend = PS5ishReadPlayLabel.IndexOf("\" /><!--PYL-->");
+                string PlayLabeltextBefore = PS5ishReadPlayLabel.Substring(0, PlayLabelstart);
+                string PlayLabeltextAfter = PS5ishReadPlayLabel.Substring(PlayLabelend + 1);
+                string PS5ishReadPlayLabelReplaced = PlayLabeltextBefore + "<!--PYL--><Setter Property=\"Text\" Value=\"" + SettingsModel.Settings.PlayLabel_PS5ish + "\"" + PlayLabeltextAfter;
+                System.IO.File.WriteAllText(ConstantsLocationPS5ish, PS5ishReadPlayLabelReplaced);
+
                 string PS5ishReadPlayGameLabel = System.IO.File.ReadAllText(ConstantsLocationPS5ish);
                 int PlayGameLabelstart = PS5ishReadPlayGameLabel.IndexOf("<!--PGL--><sys:String x:Key=\"PlayGameLabelString\">");
                 int PlayGameLabelend = PS5ishReadPlayGameLabel.IndexOf("</sys:String><!--PGL-->");
