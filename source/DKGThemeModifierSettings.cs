@@ -98,6 +98,9 @@ namespace DKGThemeModifier
 
         //FilterPresetsVertical
         public bool FilterPresetsVertical_PlayniteModernUI { get; set; } = true;
+
+        //DropShadows
+        public bool DropShadows_PlayniteModernUI { get; set; } = false;
         //###############################################################################################################
         //###############################################################################################################
 

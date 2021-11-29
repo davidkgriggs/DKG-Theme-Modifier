@@ -51,3 +51,9 @@ Packages:
     PackageUrl: https://github.com/davidkgriggs/DKG-Theme-Modifier/releases/download/v2.2.5/DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520_2_2_5.pext
     Changelog:
       - Added option to change the "Play" word for PS5ish
+  - Version: 2.2.6
+    RequiredApiVersion: 6.0.0
+    ReleaseDate: 2021-11-29
+    PackageUrl: https://github.com/davidkgriggs/DKG-Theme-Modifier/releases/download/v2.2.6/DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520_2_2_6.pext
+    Changelog:
+      - Added option to enable Drop Shadows for Playnite Modern UI

@@ -117,6 +117,9 @@ namespace DKGThemeModifier
 
                 //FilterPresetsVertical
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "FilterPresetVertical", SettingsModel.Settings.FilterPresetsVertical_PlayniteModernUI);
+                
+                //DropShadows
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "DropShadows", SettingsModel.Settings.DropShadows_PlayniteModernUI);
             }
 
             PlayniteApi.Dialogs.ShowMessage("Changes Applied");
