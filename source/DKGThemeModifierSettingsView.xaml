@@ -218,6 +218,25 @@
                                 </StackPanel>
                             </ScrollViewer>
                         </TabItem>
+
+                        <TabItem Header="Filter Presets">
+                            <ScrollViewer>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="20,20,20,0">
+                                    <TextBlock Text="Filter Preset Icons" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="300" Text="Download Filter Preset Icons from GitHub:"/>
+                                            <Button Content="Download Icons" Click="PlayniteModernUI_DownloadIcons"  Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                            <TextBlock Width="300" Text="Open Filter Preset Icons directory:"/>
+                                            <Button Content="Open Folder" Click="OpenFilterIcons" Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
                     </TabControl>
                 </Grid>
             </TabItem>

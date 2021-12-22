@@ -10,6 +10,15 @@ namespace DKGThemeModifier
 {
     class ConstantsEdit
     {
+        public static object DKGThemeModifierDirectory(string path, string DKGThemeModifierPath)
+        {
+            string ConstantsLocation = path;
+            string ReadConstants = File.ReadAllText(ConstantsLocation);
+            ReadConstants = ReadConstants.Replace("<sys:String x:Key=\"DKGThemeModifierPath\">.</sys:String>", "<sys:String x:Key=\"DKGThemeModifierPath\">" + DKGThemeModifierPath + "</sys:String>");
+            File.WriteAllText(ConstantsLocation, ReadConstants);
+            return null;
+        }
+
         public static object TrueFalse(string path, string search, bool replace)
         {
             string ConstantsLocation = path;

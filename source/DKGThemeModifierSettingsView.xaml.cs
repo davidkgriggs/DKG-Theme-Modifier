@@ -19,7 +19,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
-
+using System.Text.RegularExpressions;
+using System.IO.Compression;
 
 namespace DKGThemeModifier
 {
@@ -32,6 +33,13 @@ namespace DKGThemeModifier
             InitializeComponent();
             this.PlayniteApi = PlayniteApi;
             SettingsModel = settings;
+        }
+
+        private void OpenFilterIcons(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            string Location = PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons";
+            Process.Start("explorer.exe", Location);
         }
 
         private void PlayniteModernUI_Commit(object sender, EventArgs e)
@@ -132,6 +140,32 @@ namespace DKGThemeModifier
                 webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/PlayniteModernUI/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml");
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
+            }
+        }
+
+        private void PlayniteModernUI_DownloadIcons(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFile(new Uri("https://github.com/davidkgriggs/DKG-Theme-Modifier/raw/main/DKGThemeModifier/FilterPresets/Icons/Icons.zip"), PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+                
+                if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip"))
+                {
+                    ZipArchive OpenRead(string filename)
+                    {
+                        return new ZipArchive(File.OpenRead(filename), ZipArchiveMode.Read);
+                    }
+                    ZipArchive zipArchive =  OpenRead(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+                    foreach (ZipArchiveEntry entry in zipArchive.Entries)
+                    {
+                        entry.ExtractToFile(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\" + entry.Name, true);
+                    }
+                    zipArchive.Dispose();
+
+                    //ZipFile.ExtractToDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip", PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\");
+                    File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+                    PlayniteApi.Dialogs.ShowMessage("Icons Downloaded");
+                }
             }
         }
 
