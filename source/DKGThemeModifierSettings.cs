@@ -101,6 +101,8 @@ namespace DKGThemeModifier
 
         //DropShadows
         public bool DropShadows_PlayniteModernUI { get; set; } = false;
+
+        public int ListGamesHeight_PlayniteModernUI { get; set; } = 600;
         //###############################################################################################################
         //###############################################################################################################
 

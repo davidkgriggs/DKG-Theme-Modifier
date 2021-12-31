@@ -128,11 +128,15 @@ namespace DKGThemeModifier
                 
                 //DropShadows
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "DropShadows", SettingsModel.Settings.DropShadows_PlayniteModernUI);
+
+                string sListGamesHeight = SettingsModel.Settings.ListGamesHeight_PlayniteModernUI.ToString();
+                ConstantsEdit.ListGameHeight(ConstantsLocation_PlayniteModernUI, sListGamesHeight);
             }
 
             PlayniteApi.Dialogs.ShowMessage("Changes Applied");
         }
 
+        //APPLY DEFAULTS
         private void PlayniteModernUI_Defaults(object sender, EventArgs e)
         {
             using (WebClient webClient = new WebClient())
@@ -143,6 +147,7 @@ namespace DKGThemeModifier
             }
         }
 
+        //DOWNLOAD ICONS FROM GITHUB
         private void PlayniteModernUI_DownloadIcons(object sender, EventArgs e)
         {
             using (WebClient webClient = new WebClient())

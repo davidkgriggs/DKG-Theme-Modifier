@@ -116,16 +116,6 @@
                                         <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.IntroVideoVolume_PlayniteModernUI}"/>
                                     </StackPanel>
 
-                                    <TextBlock Text="Filter Presets" FontSize="22" Margin="0,5,0,5"/>
-                                    <StackPanel>
-                                        <StackPanel>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Width="200" Text="Filter Presets Vertical:"/>
-                                                <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.FilterPresetsVertical_PlayniteModernUI}"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </StackPanel>
-
                                     <TextBlock Text="Title/Logo" FontSize="22" Margin="0,5,0,5"/>
                                     <StackPanel>
                                         <StackPanel>
@@ -187,6 +177,14 @@
                                         </StackPanel>
                                     </StackPanel>
 
+                                    <TextBlock Text="List Games Height" FontSize="22" Margin="0,0,0,5"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="List Games Height: " FontSize="16" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding Settings.ListGamesHeight_PlayniteModernUI}" FontSize="16" Margin="0,0,0,5"/>
+                                    </StackPanel>
+                                    <Slider IsSnapToTickEnabled="True" Minimum="300" Maximum="800" Value="{Binding Settings.ListGamesHeight_PlayniteModernUI}" 
+                                            VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="500" Margin="0,0,0,10"/>
+
                                     <TextBlock Text="Trailers" FontSize="22" Margin="0,5,0,5"/>
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">
@@ -222,6 +220,16 @@
                         <TabItem Header="Filter Presets">
                             <ScrollViewer>
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="20,20,20,0">
+                                    <TextBlock Text="Filter Presets" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Width="200" Text="Filter Presets Vertical:"/>
+                                                <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.FilterPresetsVertical_PlayniteModernUI}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+
                                     <TextBlock Text="Filter Preset Icons" FontSize="22" Margin="0,5,0,5"/>
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">

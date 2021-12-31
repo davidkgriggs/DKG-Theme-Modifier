@@ -89,5 +89,18 @@ namespace DKGThemeModifier
             System.IO.File.WriteAllText(ConstantsLocation, Replaced);
             return null;
         }
+
+        public static object ListGameHeight(string path, string sIntroLength)
+        {
+            string ConstantsLocation = path;
+            string ConstantsRead = System.IO.File.ReadAllText(ConstantsLocation);
+            int Start = ConstantsRead.IndexOf("<!--LGH--><sys:Double x:Key=\"ListGamesHeight\">");
+            int End = ConstantsRead.IndexOf("</sys:Double><!--LGH-->");
+            string TextBefore = ConstantsRead.Substring(0, Start);
+            string TextAfter = ConstantsRead.Substring(End);
+            string Replaced = TextBefore + "<!--LGH--><sys:Double x:Key=\"ListGamesHeight\">" + sIntroLength + TextAfter;
+            System.IO.File.WriteAllText(ConstantsLocation, Replaced);
+            return null;
+        }
     }
 }
