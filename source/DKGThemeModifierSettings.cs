@@ -150,6 +150,12 @@ namespace DKGThemeModifier
         //Trailers
         public bool Trailers_PS5ish { get; set; } = true;
 
+        //MicroVideoBackgrounds
+        public bool MicroVideoBackgrounds_PS5ish { get; set; } = false;
+
+        //FullVideoBackgrounds
+        public bool FullVideoBackgrounds_PS5ish { get; set; } = false;
+
         //###############################################################################################################
         //###############################################################################################################
 

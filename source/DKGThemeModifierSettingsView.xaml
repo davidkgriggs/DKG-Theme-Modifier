@@ -367,6 +367,18 @@
                                         <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.IntroVideoVolume_PS5ish}"/>
                                     </StackPanel>
 
+                                    <TextBlock Text="Video Backgrounds" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="250" Text="Micro Trailer video backgrounds:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.MicroVideoBackgrounds_PS5ish}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="250" Text="Full Trailer video backgrounds:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.FullVideoBackgrounds_PS5ish}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    
                                     <TextBlock Text="Options" FontSize="22" Margin="0,5,0,5"/>
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">

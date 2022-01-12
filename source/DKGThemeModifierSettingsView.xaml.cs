@@ -246,6 +246,18 @@ namespace DKGThemeModifier
                     ConstantsEdit.TrueFalse(ConstantsLocationPS5ish, "Trailers", SettingsModel.Settings.Trailers_PS5ish);
                 }
 
+                //Micro Video backgrounds
+                if (ReadConstatnts_PS5ish.Contains("MicroVideoBackgrounds"))
+                {
+                    ConstantsEdit.TrueFalse(ConstantsLocationPS5ish, "MicroVideoBackgrounds", SettingsModel.Settings.MicroVideoBackgrounds_PS5ish);
+                }
+
+                //Full Video Backgrounds
+                if (ReadConstatnts_PS5ish.Contains("TrailerVideoBackgrounds"))
+                {
+                    ConstantsEdit.TrueFalse(ConstantsLocationPS5ish, "TrailerVideoBackgrounds", SettingsModel.Settings.FullVideoBackgrounds_PS5ish);
+                }
+
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //Changing Labels
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
