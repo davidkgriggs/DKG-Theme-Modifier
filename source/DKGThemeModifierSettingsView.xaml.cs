@@ -319,5 +319,60 @@ namespace DKGThemeModifier
             }
         }
 
+        private void PalyniteDeck_Commit(object sender, EventArgs e)
+        {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //PlayniteDeck
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+            if (SettingsModel.Settings.IsThemeInstalled_PlayniteDeck == true)
+            {
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //Set Constants Location
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                string ConstantsLocationPlayniteDeck = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Playnite Deck_905f24da-b02b-40df-9f6b-14c41fcdb05d\Constants.xaml";
+                string ReadConstatnts_PlayniteDeck = System.IO.File.ReadAllText(ConstantsLocationPlayniteDeck);
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                //Trailers
+                if (ReadConstatnts_PlayniteDeck.Contains("Trailers"))
+                {
+                    ConstantsEdit.TrueFalse(ConstantsLocationPlayniteDeck, "Trailers", SettingsModel.Settings.Trailers_PlayniteDeck);
+                }
+
+                //Micro Video backgrounds
+                if (ReadConstatnts_PlayniteDeck.Contains("SteamBackground"))
+                {
+                    ConstantsEdit.TrueFalse(ConstantsLocationPlayniteDeck, "SteamBackground", SettingsModel.Settings.SteamBackgrounds_PlayniteDeck);
+                }
+
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //Changing Labels
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+               
+                //Labels
+                string PlayniteDeck_ReadNewToLibrary = System.IO.File.ReadAllText(ConstantsLocationPlayniteDeck);
+                int PDNTLstart = PlayniteDeck_ReadNewToLibrary.IndexOf("<!--NTL--><sys:String x:Key=\"NewToLibrary\">");
+                int PDNTLend = PlayniteDeck_ReadNewToLibrary.IndexOf("</sys:String><!--NTL-->");
+                string PDNTLtextBefore = PlayniteDeck_ReadNewToLibrary.Substring(0, PDNTLstart);
+                string PDNTLtextAfter = PlayniteDeck_ReadNewToLibrary.Substring(PDNTLend + 1);
+                string PlayniteDeck_NewToLibraryReplaced = PDNTLtextBefore + "<!--NTL--><sys:String x:Key=\"NewToLibrary\">" + SettingsModel.Settings.NewToLibrary_PlayniteDeck + "\"<" + PDNTLtextAfter;
+                System.IO.File.WriteAllText(ConstantsLocationPlayniteDeck, PlayniteDeck_NewToLibraryReplaced);
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            }
+
+            PlayniteApi.Dialogs.ShowMessage("Changes Applied");
+        }
+
+        private void PlayniteDeck_Defaults(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/Playnite-Deck/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Playnite Deck_905f24da-b02b-40df-9f6b-14c41fcdb05d\Constants.xaml");
+
+                PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
+            }
+        }
+
     }
 }

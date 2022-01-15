@@ -123,6 +123,9 @@ namespace DKGThemeModifier
             settings.Settings.IsThemeInstalled_PS5ish = false;
             settings.Settings.IsThemeInstalledHeader_PS5ish = "";
 
+            settings.Settings.IsThemeInstalled_PlayniteDeck = false;
+            settings.Settings.IsThemeInstalledHeader_PlayniteDeck = "";
+
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\theme.yaml"))
             {
                 settings.Settings.IsThemeInstalled_PlayniteModernUI = true;
@@ -134,6 +137,11 @@ namespace DKGThemeModifier
             {
                 settings.Settings.IsThemeInstalled_PS5ish = true;
                 settings.Settings.IsThemeInstalledHeader_PS5ish = "PS5ish";
+            }
+            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Playnite Deck_905f24da-b02b-40df-9f6b-14c41fcdb05d\theme.yaml"))
+            {
+                settings.Settings.IsThemeInstalled_PlayniteDeck = true;
+                settings.Settings.IsThemeInstalledHeader_PlayniteDeck = "Playnite Deck";
             }
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

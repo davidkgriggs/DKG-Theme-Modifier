@@ -497,6 +497,66 @@
                 </Grid>
             </TabItem>
 
+            <!--PlayniteDeck-->
+            <TabItem Header="{Binding Settings.IsThemeInstalledHeader_PlayniteDeck}">
+                <Grid>
+                    <Grid.Style>
+                        <Style>
+                            <Setter Property="ItemsControl.Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Settings.IsThemeInstalled_PlayniteDeck}" Value="true">
+                                    <Setter Property="ItemsControl.Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <TabControl>
+                        <TabItem Header="General">
+                            <ScrollViewer>
+                                <StackPanel Margin="10">
+                                    <TextBlock Text="Apply Changes" FontSize="22" />
+                                    <Button Click="PalyniteDeck_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
+
+                                    <TextBlock Text="Restore Defaults" FontSize="22" />
+                                    <Button Click="PlayniteDeck_Defaults" Content="Restore Defaults" Margin="0,5,0,10"/>
+
+                                    <TextBlock Text="Trailers" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Trailers:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.Trailers_PlayniteDeck}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <TextBlock Text="Steam Background" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="250" Text="Steam Background:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.SteamBackgrounds_PlayniteDeck}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+
+                        <TabItem Header="Labels">
+                            <ScrollViewer>
+                                <StackPanel Margin="10,10">
+                                    <StackPanel>
+                                        <!--CHANGING LABELS-->
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="150" Margin="0,0,0,0" Text="NEW TO LIBRARY Label:"/>
+                                            <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.NewToLibrary_PlayniteDeck}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+
         </TabControl>
     </Grid>
 </UserControl>

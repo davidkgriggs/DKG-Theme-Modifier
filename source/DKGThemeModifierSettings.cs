@@ -159,6 +159,24 @@ namespace DKGThemeModifier
         //###############################################################################################################
         //###############################################################################################################
 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //PlayniteDeck
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public bool IsThemeInstalled_PlayniteDeck { get; set; } = false;
+        public string IsThemeInstalledHeader_PlayniteDeck { get; set; } = "";
+
+        //Trailers
+        public bool Trailers_PlayniteDeck { get; set; } = true;
+
+        //MicroVideoBackgrounds
+        public bool SteamBackgrounds_PlayniteDeck { get; set; } = true;
+
+        //Labels
+        public string NewToLibrary_PlayniteDeck { get; set; } = "NEW TO LIBRARY";
+
+        //###############################################################################################################
+        //###############################################################################################################
+
         // Playnite serializes settings object to a JSON object and saves it as text file.
         // If you want to exclude some property from being saved then use `JsonDontSerialize` ignore attribute.
         [DontSerialize]
