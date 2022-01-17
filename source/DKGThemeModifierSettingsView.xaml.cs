@@ -339,23 +339,29 @@ namespace DKGThemeModifier
                     ConstantsEdit.TrueFalse(ConstantsLocationPlayniteDeck, "Trailers", SettingsModel.Settings.Trailers_PlayniteDeck);
                 }
 
-                //Micro Video backgrounds
+                //Steam backgrounds
                 if (ReadConstatnts_PlayniteDeck.Contains("SteamBackground"))
                 {
                     ConstantsEdit.TrueFalse(ConstantsLocationPlayniteDeck, "SteamBackground", SettingsModel.Settings.SteamBackgrounds_PlayniteDeck);
                 }
 
+                //New To Library
+                if (ReadConstatnts_PlayniteDeck.Contains("NewToLibrary"))
+                {
+                    ConstantsEdit.TrueFalse(ConstantsLocationPlayniteDeck, "NewToLibraryBool", SettingsModel.Settings.NewToLibraryBool_PlayniteDeck);
+                }
+
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 //Changing Labels
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-               
+
                 //Labels
                 string PlayniteDeck_ReadNewToLibrary = System.IO.File.ReadAllText(ConstantsLocationPlayniteDeck);
                 int PDNTLstart = PlayniteDeck_ReadNewToLibrary.IndexOf("<!--NTL--><sys:String x:Key=\"NewToLibrary\">");
                 int PDNTLend = PlayniteDeck_ReadNewToLibrary.IndexOf("</sys:String><!--NTL-->");
                 string PDNTLtextBefore = PlayniteDeck_ReadNewToLibrary.Substring(0, PDNTLstart);
                 string PDNTLtextAfter = PlayniteDeck_ReadNewToLibrary.Substring(PDNTLend + 1);
-                string PlayniteDeck_NewToLibraryReplaced = PDNTLtextBefore + "<!--NTL--><sys:String x:Key=\"NewToLibrary\">" + SettingsModel.Settings.NewToLibrary_PlayniteDeck + "\"<" + PDNTLtextAfter;
+                string PlayniteDeck_NewToLibraryReplaced = PDNTLtextBefore + "<!--NTL--><sys:String x:Key=\"NewToLibrary\">" + SettingsModel.Settings.NewToLibrary_PlayniteDeck + "<" + PDNTLtextAfter;
                 System.IO.File.WriteAllText(ConstantsLocationPlayniteDeck, PlayniteDeck_NewToLibraryReplaced);
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

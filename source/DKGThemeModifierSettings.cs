@@ -168,8 +168,11 @@ namespace DKGThemeModifier
         //Trailers
         public bool Trailers_PlayniteDeck { get; set; } = true;
 
-        //MicroVideoBackgrounds
+        //SteamBackgrounds
         public bool SteamBackgrounds_PlayniteDeck { get; set; } = true;
+
+        //NewToLibrary
+        public bool NewToLibraryBool_PlayniteDeck { get; set; } = true;
 
         //Labels
         public string NewToLibrary_PlayniteDeck { get; set; } = "NEW TO LIBRARY";

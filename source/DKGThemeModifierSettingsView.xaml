@@ -536,6 +536,14 @@
                                         </StackPanel>
                                     </StackPanel>
 
+                                    <TextBlock Text="New To Library" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="250" Text="Show New To Library:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.NewToLibraryBool_PlayniteDeck}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
                                 </StackPanel>
                             </ScrollViewer>
                         </TabItem>
