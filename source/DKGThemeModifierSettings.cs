@@ -160,6 +160,71 @@ namespace DKGThemeModifier
         //###############################################################################################################
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //XBOXSERIESish
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public bool IsThemeInstalled_XBOXSERIESish { get; set; } = false;
+        public string IsThemeInstalledHeader_XBOXSERIESish { get; set; } = "";
+
+        //ProfileName
+        public string ProfileName_XBOXSERIESish { get; set; } = "XBOXSERIESish";
+
+        //DarkLightMode
+        public bool DarkMode_XBOXSERIESish { get; set; } = true;
+        public bool LightMode_XBOXSERIESish { get; set; } = false;
+
+        //ColourPicker
+        public bool Colour1_XBOXSERIESish { get; set; } = true;
+        public bool Colour2_XBOXSERIESish { get; set; } = false;
+        public bool Colour3_XBOXSERIESish { get; set; } = false;
+        public bool Colour4_XBOXSERIESish { get; set; } = false;
+        public bool Colour5_XBOXSERIESish { get; set; } = false;
+        public bool Colour6_XBOXSERIESish { get; set; } = false;
+        public bool Colour7_XBOXSERIESish { get; set; } = false;
+        public bool Colour8_XBOXSERIESish { get; set; } = false;
+        public bool Colour9_XBOXSERIESish { get; set; } = false;
+        public bool Colour10_XBOXSERIESish { get; set; } = false;
+        public bool Colour11_XBOXSERIESish { get; set; } = false;
+        public bool Colour12_XBOXSERIESish { get; set; } = false;
+        public bool Colour13_XBOXSERIESish { get; set; } = false;
+        public bool Colour14_XBOXSERIESish { get; set; } = false;
+        public bool Colour15_XBOXSERIESish { get; set; } = false;
+        public bool Colour16_XBOXSERIESish { get; set; } = false;
+        public bool Colour17_XBOXSERIESish { get; set; } = false;
+        public bool Colour18_XBOXSERIESish { get; set; } = false;
+        public bool Colour19_XBOXSERIESish { get; set; } = false;
+        public bool Colour20_XBOXSERIESish { get; set; } = false;
+        public bool Colour21_XBOXSERIESish { get; set; } = false;
+
+        //DynamicBackground
+        public bool DynamicBackground_XBOXSERIESish { get; set; } = false;
+        public bool DynamicBackgroundColumns_XBOXSERIESish { get; set; } = true;
+        public bool DynamicBackgroundWave_XBOXSERIESish { get; set; } = false;
+
+        //ThemeIntro
+        public bool ThemeIntro_XBOXSERIESish { get; set; } = false;
+        public int IntroLength_XBOXSERIESish { get; set; } = 3;
+        public bool IntroVideo_XBOXSERIESish { get; set; } = false;
+        public bool IntroVideoVolume_XBOXSERIESish { get; set; } = true;
+
+        //Banners
+        public bool Banners_XBOXSERIESish { get; set; } = false;
+
+        //VideoCovers
+        public bool VideoCovers_XBOXSERIESish { get; set; } = false;
+
+        //VideoBackgrounds
+        public bool VideoBackgrounds_XBOXSERIESish { get; set; } = false;
+
+        //Trailers
+        public bool Trailers_XBOXSERIESish { get; set; } = true;
+
+        //Labels
+        public string ProgressLabel_XBOXSERIESish { get; set; } = "{DynamicResource LOCSuccessStoryProgress}";
+        public string EarnedLabel_XBOXSERIESish { get; set; } = "{DynamicResource LOCSuccessStoryEarned}";
+        //###############################################################################################################
+        //###############################################################################################################
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //PlayniteDeck
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public bool IsThemeInstalled_PlayniteDeck { get; set; } = false;
@@ -177,6 +242,73 @@ namespace DKGThemeModifier
         //Labels
         public string NewToLibrary_PlayniteDeck { get; set; } = "NEW TO LIBRARY";
 
+        //###############################################################################################################
+        //###############################################################################################################
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Platforms
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public bool IsThemeInstalled_Platforms { get; set; } = false;
+        public string IsThemeInstalledHeader_Platforms { get; set; } = "";
+
+        //DarkLightMode
+        public bool DarkMode_Platforms { get; set; } = true;
+        public bool LightMode_Platforms { get; set; } = false;
+
+        //ColourPicker
+        public bool Colour1_Platforms { get; set; } = false;
+        public bool Colour2_Platforms { get; set; } = false;
+        public bool Colour3_Platforms { get; set; } = false;
+        public bool Colour4_Platforms { get; set; } = false;
+        public bool Colour5_Platforms { get; set; } = false;
+        public bool Colour6_Platforms { get; set; } = false;
+        public bool Colour7_Platforms { get; set; } = false;
+        public bool Colour8_Platforms { get; set; } = false;
+        public bool Colour9_Platforms { get; set; } = false;
+        public bool Colour10_Platforms { get; set; } = false;
+        public bool Colour11_Platforms { get; set; } = false;
+        public bool Colour12_Platforms { get; set; } = false;
+        public bool Colour13_Platforms { get; set; } = false;
+        public bool Colour14_Platforms { get; set; } = false;
+        public bool Colour15_Platforms { get; set; } = false;
+        public bool Colour16_Platforms { get; set; } = false;
+        public bool Colour17_Platforms { get; set; } = false;
+        public bool Colour18_Platforms { get; set; } = false;
+        public bool Colour19_Platforms { get; set; } = false;
+        public bool Colour20_Platforms { get; set; } = false;
+        public bool Colour21_Platforms { get; set; } = false;
+        public bool Colour22_Platforms { get; set; } = true;
+
+        //ThemeIntro
+        public bool ThemeIntro_Platforms { get; set; } = false;
+        public int IntroLength_Platforms { get; set; } = 3;
+        public bool IntroVideo_Platforms { get; set; } = false;
+        public bool IntroVideoVolume_Platforms { get; set; } = true;
+
+        //Banners
+        public bool Banners_Platforms { get; set; } = false;
+
+        //RoundedCorners
+        public bool RoundedCorners_Platforms { get; set; } = false;
+        public int RoundedCornersAmount_Platforms { get; set; } = 15;
+
+        //VideoCovers
+        public bool VideoCovers_Platforms { get; set; } = true;
+
+        //VideoBackgrounds
+        public bool VideoBackgrounds_Platforms { get; set; } = false;
+
+        //Trailers
+        public bool Trailers_Platforms { get; set; } = true;
+
+        //SideBar
+        public bool SideBar_Platforms { get; set; } = true;
+
+        public int ListGamesHeight_Platforms { get; set; } = 600;
+
+        public bool FilterPresetWidth_Platforms { get; set; } = false;
+
+        public bool PlatformBackgrounds_Platforms { get; set; } = false;
         //###############################################################################################################
         //###############################################################################################################
 

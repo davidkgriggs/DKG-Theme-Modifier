@@ -18,6 +18,343 @@
                 </StackPanel>
             </TabItem>
 
+            <!--Platforms-->
+            <TabItem Header="{Binding Settings.IsThemeInstalledHeader_Platforms}">
+                <Grid>
+                    <Grid.Style>
+                        <Style>
+                            <Setter Property="ItemsControl.Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Settings.IsThemeInstalled_Platforms}" Value="true">
+                                    <Setter Property="ItemsControl.Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <TabControl>
+                        <TabItem Header="General">
+                            <ScrollViewer>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="20,20,20,0">
+                                    <StackPanel.Resources>
+                                        <Style x:Key="ColourPicker_PlatformsStyle" TargetType="{x:Type RadioButton}" >
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                                                        <BulletDecorator HorizontalAlignment="Left" Background="{TemplateBinding Background}" Cursor="Hand" Height="30" Width="30">
+                                                            <BulletDecorator.Bullet>
+                                                                <Grid Height="30" Width="30">
+                                                                    <Border Name="RadioMark" Background="Transparent" BorderBrush="#909090" BorderThickness="4" Visibility="Hidden" />
+                                                                </Grid>
+                                                            </BulletDecorator.Bullet>
+                                                        </BulletDecorator>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsChecked" Value="true">
+                                                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsMouseOver" Value="true">
+                                                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </StackPanel.Resources>
+                                    <TextBlock Text="Apply Changes" FontSize="22" />
+                                    <Button Click="Platforms_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
+
+                                    <TextBlock Text="Restore Defaults" FontSize="22" />
+                                    <Button Click="Platforms_Defaults" Content="Restore Defaults" Margin="0,5,0,10"/>
+
+                                    <TextBlock Text="My Colour" FontSize="22" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <RadioButton IsChecked="{Binding Settings.Colour1_Platforms}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#54a81b"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour2_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#107c10"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour3_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#108272"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour4_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#148282"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour5_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#1081ca"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour6_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#1073d6"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour7_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#193e91"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour8_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#744da9"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour9_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#b144c0"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour10_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#ed5588"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour11_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#bf1077"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour12_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#a21025"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour13_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#e31123"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour14_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#eb4910"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                        <RadioButton IsChecked="{Binding Settings.Colour15_Platforms}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#eb8c10"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour16_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#724f2f"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour17_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#7e715c"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour18_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#547a72"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour19_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#677488"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour20_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#737373"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour21_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#4c4a4b"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour22_Platforms}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_Platforms" Style="{DynamicResource ColourPicker_PlatformsStyle}" Background="#00BAAF"/>
+                                    </StackPanel>
+
+                                    <!--TextBlock Text="Theme Intro" FontSize="22" Margin="0,0,0,5"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="200" Text="Enable Theme Intro:"/>
+                                        <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.ThemeIntro_Platforms}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Intro Length: " FontSize="16" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding Settings.IntroLength_Platforms}" FontSize="16" Margin="0,0,0,5"/>
+                                        <TextBlock Text=" seconds" FontSize="16" Margin="0,0,0,5"/>
+                                    </StackPanel>
+                                    <Slider IsSnapToTickEnabled="True" Minimum="1" Maximum="30" Value="{Binding Settings.IntroLength_Platforms}" 
+                                            VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="300" Margin="0,0,0,10"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="200" Text="Enable Video Intro:"/>
+                                        <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.IntroVideo_Platforms}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="200" Text="Mute Video Intro:"/>
+                                        <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.IntroVideoVolume_Platforms}"/>
+                                    </StackPanel-->
+
+                                    <!--TextBlock Text="Background" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <StackPanel>
+                                                <TextBlock Width="200" Text="Video Backgrounds:"/>
+                                                <TextBlock Width="200" Text="(BEWARE CAUSES PERFORMANCE IMPACT!)" FontSize="10"/>
+                                            </StackPanel>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.VideoBackgrounds_Platforms}"/>
+                                        </StackPanel>
+                                    </StackPanel-->
+
+                                    <!--TextBlock Text="Drop Shadows" FontSize="22" Margin="0,10,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <StackPanel>
+                                                <TextBlock Width="200" Text="Drop Shadows:"/>
+                                                <TextBlock Width="200" Text="(BEWARE CAUSES PERFORMANCE IMPACT!)" FontSize="10"/>
+                                            </StackPanel>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.DropShadows_Platforms}"/>
+                                        </StackPanel>
+                                    </StackPanel-->
+
+                                    <TextBlock Text="Covers" FontSize="22" Margin="0,10,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <StackPanel>
+                                                <TextBlock Width="200" Text="Rounded Corners:"/>
+                                                <TextBlock Width="200" Text="(BEWARE CAUSES PERFORMANCE IMPACT!)" FontSize="10"/>
+                                            </StackPanel>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.RoundedCorners_Platforms}"/>
+                                        </StackPanel>
+                                        <StackPanel Margin="0,5,0,0">
+                                            <StackPanel.Style>
+                                                <Style>
+                                                    <Setter Property="ItemsControl.Visibility" Value="Collapsed"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Settings.RoundedCorners_Platforms}" Value="true">
+                                                            <Setter Property="ItemsControl.Visibility" Value="Visible"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </StackPanel.Style>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Width="200" Text="Rounded Corners: "/>
+                                                <TextBlock Text="{Binding Settings.RoundedCornersAmount_Platforms}" FontSize="16" Margin="0,0,0,5"/>
+                                            </StackPanel>
+                                            <Slider IsSnapToTickEnabled="True" Minimum="0" Maximum="30" Value="{Binding Settings.RoundedCornersAmount_Platforms}" 
+                                            VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="300" Margin="0,0,0,5"/>
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Video Covers:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.VideoCovers_Platforms}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <TextBlock Text="Trailers" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Trailers:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.Trailers_Platforms}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <TextBlock Text="Grid View" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Width="200" Text="Platform Backgrounds:"/>
+                                                <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.PlatformBackgrounds_Platforms}"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Width="200" Text="Side Bar:"/>
+                                                <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.SideBar_Platforms}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <TextBlock Text="21:9" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="300" Margin="0,0,0,0" Text="21:9 resolution stretch for Filter Presets:"/>
+                                        <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.FilterPresetWidth_Platforms}"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+
+                        <TabItem Header="Filter Presets">
+                            <ScrollViewer>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="20,20,20,0">
+                                    <TextBlock Text="Filter Presets" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="350" Text="Download Platform Backgrounds from GitHub:"/>
+                                            <Button Content="Download Backgrounds" Click="DownloadPlatformBackgrounds"  Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                            <TextBlock Width="350" Text="Open Platform Backgrounds directory:"/>
+                                            <Button Content="Open Folder" Click="OpenPlatformBackgrounds" Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <Line HorizontalAlignment="Center" Stroke="#FFEBEBEB" StrokeThickness="2" X1="600" Margin="0,10,0,10" Opacity="0.3"/>
+
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="350" Text="Download Platform Colours from GitHub:"/>
+                                            <Button Content="Download Colours" Click="DownloadPlatformColours"  Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                            <TextBlock Width="350" Text="Open Platform Colours directory:"/>
+                                            <Button Content="Open Folder" Click="OpenPlatformColours" Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <Line HorizontalAlignment="Center" Stroke="#FFEBEBEB" StrokeThickness="2" X1="600" Margin="0,10,0,10" Opacity="0.3"/>
+
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="350" Text="Download Platform Images from GitHub:"/>
+                                            <Button Content="Download Images" Click="DownloadPlatformImages"  Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                            <TextBlock Width="350" Text="Open Platform Images directory:"/>
+                                            <Button Content="Open Folder" Click="OpenPlatformImages" Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <Line HorizontalAlignment="Center" Stroke="#FFEBEBEB" StrokeThickness="2" X1="600" Margin="0,10,0,10" Opacity="0.3"/>
+
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="350" Text="Download Platform Logos from GitHub:"/>
+                                            <Button Content="Download Logos" Click="DownloadPlatformLogos"  Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                            <TextBlock Width="350" Text="Open Platform Logos directory:"/>
+                                            <Button Content="Open Folder" Click="OpenPlatformLogos" Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <Line HorizontalAlignment="Center" Stroke="#FFEBEBEB" StrokeThickness="2" X1="600" Margin="0,10,0,10" Opacity="0.3"/>
+
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="350" Text="Download Platform Screenshots from GitHub:"/>
+                                            <Button Content="Download Screenshots" Click="DownloadPlatformScreenshots"  Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                            <TextBlock Width="350" Text="Open Platform Screenshots directory:"/>
+                                            <Button Content="Open Folder" Click="OpenPlatformScreenshots" Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <Line HorizontalAlignment="Center" Stroke="#FFEBEBEB" StrokeThickness="2" X1="600" Margin="0,10,0,10" Opacity="0.3"/>
+
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                                            <TextBlock Width="350" Text="Open Platform Trailers directory:"/>
+                                            <Button Content="Open Folder" Click="OpenPlatformTrailers" Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+
+            <!--PlayniteDeck-->
+            <TabItem Header="{Binding Settings.IsThemeInstalledHeader_PlayniteDeck}">
+                <Grid>
+                    <Grid.Style>
+                        <Style>
+                            <Setter Property="ItemsControl.Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Settings.IsThemeInstalled_PlayniteDeck}" Value="true">
+                                    <Setter Property="ItemsControl.Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <TabControl>
+                        <TabItem Header="General">
+                            <ScrollViewer>
+                                <StackPanel Margin="10">
+                                    <TextBlock Text="Apply Changes" FontSize="22" />
+                                    <Button Click="PalyniteDeck_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
+
+                                    <TextBlock Text="Restore Defaults" FontSize="22" />
+                                    <Button Click="PlayniteDeck_Defaults" Content="Restore Defaults" Margin="0,5,0,10"/>
+
+                                    <TextBlock Text="Trailers" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Trailers:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.Trailers_PlayniteDeck}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <TextBlock Text="Steam Background" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="250" Text="Steam Background:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.SteamBackgrounds_PlayniteDeck}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <TextBlock Text="New To Library" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="250" Text="Show New To Library:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.NewToLibraryBool_PlayniteDeck}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+
+                        <TabItem Header="Labels">
+                            <ScrollViewer>
+                                <StackPanel Margin="10,10">
+                                    <StackPanel>
+                                        <!--CHANGING LABELS-->
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="150" Margin="0,0,0,0" Text="NEW TO LIBRARY Label:"/>
+                                            <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.NewToLibrary_PlayniteDeck}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            
             <!--PlayniteModernUI-->
             <TabItem Header="{Binding Settings.IsThemeInstalledHeader_PlayniteModernUI}">
                 <Grid>
@@ -497,14 +834,14 @@
                 </Grid>
             </TabItem>
 
-            <!--PlayniteDeck-->
-            <TabItem Header="{Binding Settings.IsThemeInstalledHeader_PlayniteDeck}">
+            <!--XBOXSERIESish-->
+            <TabItem Header="{Binding Settings.IsThemeInstalledHeader_XBOXSERIESish}">
                 <Grid>
                     <Grid.Style>
                         <Style>
                             <Setter Property="ItemsControl.Visibility" Value="Collapsed"/>
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding Settings.IsThemeInstalled_PlayniteDeck}" Value="true">
+                                <DataTrigger Binding="{Binding Settings.IsThemeInstalled_XBOXSERIESish}" Value="true">
                                     <Setter Property="ItemsControl.Visibility" Value="Visible"/>
                                 </DataTrigger>
                             </Style.Triggers>
@@ -514,33 +851,118 @@
                         <TabItem Header="General">
                             <ScrollViewer>
                                 <StackPanel Margin="10">
+                                    <StackPanel.Resources>
+                                        <Style x:Key="ColourPicker_XBOXSERIESishStyle" TargetType="{x:Type RadioButton}" >
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                                                        <BulletDecorator HorizontalAlignment="Left" Background="{TemplateBinding Background}" Cursor="Hand" Height="30" Width="30">
+                                                            <BulletDecorator.Bullet>
+                                                                <Grid Height="30" Width="30">
+                                                                    <Border Name="RadioMark" Background="Transparent" BorderBrush="#909090" BorderThickness="4" Visibility="Hidden" />
+                                                                </Grid>
+                                                            </BulletDecorator.Bullet>
+                                                        </BulletDecorator>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsChecked" Value="true">
+                                                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsMouseOver" Value="true">
+                                                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </StackPanel.Resources>
                                     <TextBlock Text="Apply Changes" FontSize="22" />
-                                    <Button Click="PalyniteDeck_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
+                                    <Button Click="XBOXSERIESish_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
 
                                     <TextBlock Text="Restore Defaults" FontSize="22" />
-                                    <Button Click="PlayniteDeck_Defaults" Content="Restore Defaults" Margin="0,5,0,10"/>
+                                    <Button Click="XBOXSERIESish_Defaults" Content="Restore Defaults" Margin="0,5,0,10"/>
 
-                                    <TextBlock Text="Trailers" FontSize="22" Margin="0,5,0,5"/>
+                                    <TextBlock Text="Profile Name" FontSize="22" />
+                                    <TextBox HorizontalAlignment="Left" Width="400" Height="25" Text="{Binding Settings.ProfileName_XBOXSERIESish}" Margin="0,0,0,10"/>
+
+                                    <TextBlock Text="System Theme" FontSize="22" />
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                        <TextBlock Text="Dark Mode: " FontSize="18" />
+                                        <RadioButton IsChecked="{Binding Settings.DarkMode_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="SystemTheme_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#1E1E1C"/>
+                                        <TextBlock Margin="20,0,0,0" Text="Light Mode: " FontSize="18" />
+                                        <RadioButton IsChecked="{Binding Settings.LightMode_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="SystemTheme_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#cbcbcb"/>
+                                    </StackPanel>
+
+                                    <TextBlock Text="My Colour" FontSize="22" />
+                                    <StackPanel Orientation="Horizontal">
+                                        <RadioButton IsChecked="{Binding Settings.Colour1_XBOXSERIESish}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#54a81b"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour2_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#107c10"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour3_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#108272"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour4_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#148282"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour5_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#1081ca"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour6_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#1073d6"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour7_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#193e91"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour8_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#744da9"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour9_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#b144c0"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour10_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#ed5588"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour11_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#bf1077"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour12_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#a21025"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour13_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#e31123"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour14_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#eb4910"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                        <RadioButton IsChecked="{Binding Settings.Colour15_XBOXSERIESish}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#eb8c10"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour16_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#724f2f"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour17_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#7e715c"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour18_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#547a72"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour19_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#677488"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour20_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#737373"/>
+                                        <RadioButton IsChecked="{Binding Settings.Colour21_XBOXSERIESish}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_XBOXSERIESish" Style="{DynamicResource ColourPicker_XBOXSERIESishStyle}" Background="#4c4a4b"/>
+                                    </StackPanel>
+
+                                    <TextBlock Text="Theme Intro" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="200" Text="Enable Intro Animation:"/>
+                                        <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.ThemeIntro_XBOXSERIESish}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Intro Length: " FontSize="16" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding Settings.IntroLength_XBOXSERIESish}" FontSize="16" Margin="0,0,0,5"/>
+                                        <TextBlock Text=" seconds" FontSize="16" Margin="0,0,0,5"/>
+                                    </StackPanel>
+                                    <Slider IsSnapToTickEnabled="True" Minimum="4" Maximum="30" Value="{Binding Settings.IntroLength_XBOXSERIESish}" 
+                                VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="300" Margin="0,0,0,10"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="200" Text="Enable Intro Video:"/>
+                                        <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.IntroVideo_XBOXSERIESish}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="200" Text="Mute Intro Video:"/>
+                                        <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.IntroVideoVolume_XBOXSERIESish}"/>
+                                    </StackPanel>
+
+                                    <TextBlock Text="Dynamic Background" FontSize="22" />
+                                    <StackPanel Margin="0,5,0,0">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Dynamic Background:" />
+                                            <CheckBox Margin="0,0,0,10" IsChecked="{Binding Settings.DynamicBackground_XBOXSERIESish}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Columns Dynamic Background:" />
+                                            <CheckBox Margin="0,0,0,10" IsChecked="{Binding Settings.DynamicBackgroundColumns_XBOXSERIESish}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Wave Dynamic Background:" />
+                                            <CheckBox Margin="0,0,0,10" IsChecked="{Binding Settings.DynamicBackgroundWave_XBOXSERIESish}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <TextBlock Text="Trailers" FontSize="22" Margin="0,0,0,5"/>
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Width="200" Text="Trailers:"/>
-                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.Trailers_PlayniteDeck}"/>
-                                        </StackPanel>
-                                    </StackPanel>
-
-                                    <TextBlock Text="Steam Background" FontSize="22" Margin="0,5,0,5"/>
-                                    <StackPanel>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Width="250" Text="Steam Background:"/>
-                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.SteamBackgrounds_PlayniteDeck}"/>
-                                        </StackPanel>
-                                    </StackPanel>
-
-                                    <TextBlock Text="New To Library" FontSize="22" Margin="0,5,0,5"/>
-                                    <StackPanel>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Width="250" Text="Show New To Library:"/>
-                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.NewToLibraryBool_PlayniteDeck}"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.Trailers_XBOXSERIESish}"/>
                                         </StackPanel>
                                     </StackPanel>
 
@@ -552,10 +974,13 @@
                             <ScrollViewer>
                                 <StackPanel Margin="10,10">
                                     <StackPanel>
-                                        <!--CHANGING LABELS-->
                                         <StackPanel Orientation="Horizontal">
-                                            <TextBlock Width="150" Margin="0,0,0,0" Text="NEW TO LIBRARY Label:"/>
-                                            <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.NewToLibrary_PlayniteDeck}"/>
+                                            <TextBlock Width="150" Margin="0,0,0,0" Text="Progress Label:"/>
+                                            <TextBox Width="400" Height="25" Margin="0,0,0,2" Text="{Binding Settings.ProgressLabel_XBOXSERIESish}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="150" Margin="0,0,0,0" Text="Earned Label:"/>
+                                            <TextBox Width="400" Height="25" Text="{Binding Settings.EarnedLabel_XBOXSERIESish}"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </StackPanel>

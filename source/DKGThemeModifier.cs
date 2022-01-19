@@ -97,8 +97,11 @@ namespace DKGThemeModifier
 
             //Create FilterPreset Directorys
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons");
+            Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformBackgrounds");
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformColours");
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformImages");
+            Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformLogos");
+            Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformScreenshots");
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformTrailers");
 
 
@@ -126,6 +129,12 @@ namespace DKGThemeModifier
             settings.Settings.IsThemeInstalled_PlayniteDeck = false;
             settings.Settings.IsThemeInstalledHeader_PlayniteDeck = "";
 
+            settings.Settings.IsThemeInstalled_Platforms = false;
+            settings.Settings.IsThemeInstalledHeader_Platforms = "";
+
+            settings.Settings.IsThemeInstalled_XBOXSERIESish = false;
+            settings.Settings.IsThemeInstalledHeader_XBOXSERIESish = "";
+
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\theme.yaml"))
             {
                 settings.Settings.IsThemeInstalled_PlayniteModernUI = true;
@@ -133,15 +142,31 @@ namespace DKGThemeModifier
                 string ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml";
                 ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_PlayniteModernUI, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
             }
+
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PS5ish_676e10ec-adfe-48d8-a1bd-4d5771b5a2ca\theme.yaml"))
             {
                 settings.Settings.IsThemeInstalled_PS5ish = true;
                 settings.Settings.IsThemeInstalledHeader_PS5ish = "PS5ish";
             }
+
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Playnite Deck_905f24da-b02b-40df-9f6b-14c41fcdb05d\theme.yaml"))
             {
                 settings.Settings.IsThemeInstalled_PlayniteDeck = true;
                 settings.Settings.IsThemeInstalledHeader_PlayniteDeck = "Playnite Deck";
+            }
+
+            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Platforms_4fa3f095-357d-49d5-828e-dcf6894deae3\theme.yaml"))
+            {
+                settings.Settings.IsThemeInstalled_Platforms= true;
+                settings.Settings.IsThemeInstalledHeader_Platforms = "Platforms";
+                string ConstantsLocation_Platforms = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Platforms_4fa3f095-357d-49d5-828e-dcf6894deae3\Constants.xaml";
+                ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_Platforms, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
+            }
+
+            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\XBOXSERIESish_74735df9-3351-4669-a1ff-50f18f39b63b\theme.yaml"))
+            {
+                settings.Settings.IsThemeInstalled_XBOXSERIESish = true;
+                settings.Settings.IsThemeInstalledHeader_XBOXSERIESish = "XBOXSERIESish";
             }
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
