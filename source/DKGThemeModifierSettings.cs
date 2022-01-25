@@ -250,6 +250,7 @@ namespace DKGThemeModifier
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public bool IsThemeInstalled_Platforms { get; set; } = false;
         public string IsThemeInstalledHeader_Platforms { get; set; } = "";
+        public bool AutoDownloadMedia_Platforms { get; set; } = false;
 
         //DarkLightMode
         public bool DarkMode_Platforms { get; set; } = true;

@@ -16,6 +16,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.IO.Compression;
+
 
 namespace DKGThemeModifier
 {
@@ -161,6 +163,117 @@ namespace DKGThemeModifier
                 settings.Settings.IsThemeInstalledHeader_Platforms = "Platforms";
                 string ConstantsLocation_Platforms = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Platforms_4fa3f095-357d-49d5-828e-dcf6894deae3\Constants.xaml";
                 ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_Platforms, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
+
+                if (settings.Settings.AutoDownloadMedia_Platforms == true)
+                {
+                    string ReadConstatnts_Platforms = File.ReadAllText(ConstantsLocation_Platforms);
+                    if (ReadConstatnts_Platforms.Contains("<sys:String x:Key=\"DKGThemeModifierAutoDownloadMedia\">.</sys:String>"))
+                    {
+                        using (WebClient webClient = new WebClient())
+                        {
+                            webClient.DownloadFile(new Uri("https://github.com/davidkgriggs/DKG-Theme-Modifier/raw/main/DKGThemeModifier/FilterPresets/PlatformBackgrounds/Backgrounds.zip"), PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformBackgrounds\Backgrounds.zip");
+
+                            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformBackgrounds\Backgrounds.zip"))
+                            {
+                                ZipArchive OpenRead(string filename)
+                                {
+                                    return new ZipArchive(File.OpenRead(filename), ZipArchiveMode.Read);
+                                }
+                                ZipArchive zipArchive = OpenRead(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformBackgrounds\Backgrounds.zip");
+                                foreach (ZipArchiveEntry entry in zipArchive.Entries)
+                                {
+                                    entry.ExtractToFile(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformBackgrounds\" + entry.Name, true);
+                                }
+                                zipArchive.Dispose();
+
+                                File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformBackgrounds\Backgrounds.zip");
+                            }
+                        }
+                        using (WebClient webClient = new WebClient())
+                        {
+                            webClient.DownloadFile(new Uri("https://github.com/davidkgriggs/DKG-Theme-Modifier/raw/main/DKGThemeModifier/FilterPresets/PlatformColours/Colours.zip"), PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformColours\Colours.zip");
+
+                            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformColours\Colours.zip"))
+                            {
+                                ZipArchive OpenRead(string filename)
+                                {
+                                    return new ZipArchive(File.OpenRead(filename), ZipArchiveMode.Read);
+                                }
+                                ZipArchive zipArchive = OpenRead(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformColours\Colours.zip");
+                                foreach (ZipArchiveEntry entry in zipArchive.Entries)
+                                {
+                                    entry.ExtractToFile(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformColours\" + entry.Name, true);
+                                }
+                                zipArchive.Dispose();
+
+                                File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformColours\Colours.zip");
+                            }
+                        }
+                        using (WebClient webClient = new WebClient())
+                        {
+                            webClient.DownloadFile(new Uri("https://github.com/davidkgriggs/DKG-Theme-Modifier/raw/main/DKGThemeModifier/FilterPresets/PlatformImages/Images.zip"), PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformImages\Images.zip");
+
+                            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformImages\Images.zip"))
+                            {
+                                ZipArchive OpenRead(string filename)
+                                {
+                                    return new ZipArchive(File.OpenRead(filename), ZipArchiveMode.Read);
+                                }
+                                ZipArchive zipArchive = OpenRead(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformImages\Images.zip");
+                                foreach (ZipArchiveEntry entry in zipArchive.Entries)
+                                {
+                                    entry.ExtractToFile(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformImages\" + entry.Name, true);
+                                }
+                                zipArchive.Dispose();
+
+                                File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformImages\Images.zip");
+                            }
+                        }
+                        using (WebClient webClient = new WebClient())
+                        {
+                            webClient.DownloadFile(new Uri("https://github.com/davidkgriggs/DKG-Theme-Modifier/raw/main/DKGThemeModifier/FilterPresets/PlatformLogos/Logos.zip"), PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformLogos\Logos.zip");
+
+                            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformLogos\Logos.zip"))
+                            {
+                                ZipArchive OpenRead(string filename)
+                                {
+                                    return new ZipArchive(File.OpenRead(filename), ZipArchiveMode.Read);
+                                }
+                                ZipArchive zipArchive = OpenRead(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformLogos\Logos.zip");
+                                foreach (ZipArchiveEntry entry in zipArchive.Entries)
+                                {
+                                    entry.ExtractToFile(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformLogos\" + entry.Name, true);
+                                }
+                                zipArchive.Dispose();
+
+                                File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformLogos\Logos.zip");
+                            }
+                        }
+                        using (WebClient webClient = new WebClient())
+                        {
+                            webClient.DownloadFile(new Uri("https://github.com/davidkgriggs/DKG-Theme-Modifier/raw/main/DKGThemeModifier/FilterPresets/PlatformScreenshots/Screenshots.zip"), PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformScreenshots\Screenshots.zip");
+
+                            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformScreenshots\Screenshots.zip"))
+                            {
+                                ZipArchive OpenRead(string filename)
+                                {
+                                    return new ZipArchive(File.OpenRead(filename), ZipArchiveMode.Read);
+                                }
+                                ZipArchive zipArchive = OpenRead(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformScreenshots\Screenshots.zip");
+                                foreach (ZipArchiveEntry entry in zipArchive.Entries)
+                                {
+                                    entry.ExtractToFile(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformScreenshots\" + entry.Name, true);
+                                }
+                                zipArchive.Dispose();
+
+                                File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformScreenshots\Screenshots.zip");
+                            }
+                        }
+
+                        ReadConstatnts_Platforms = ReadConstatnts_Platforms.Replace("<sys:String x:Key=\"DKGThemeModifierAutoDownloadMedia\">.</sys:String>", "<sys:String x:Key=\"DKGThemeModifierAutoDownloadMedia\">Updated</sys:String>");
+                        File.WriteAllText(ConstantsLocation_Platforms, ReadConstatnts_Platforms);
+                    }
+                }
             }
 
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\XBOXSERIESish_74735df9-3351-4669-a1ff-50f18f39b63b\theme.yaml"))

@@ -482,6 +482,9 @@ namespace DKGThemeModifier
                 //VideoBackgrounds
                 ConstantsEdit.TrueFalse(ConstantsLocation_Platforms, "VideoBackgrounds", SettingsModel.Settings.VideoBackgrounds_Platforms);
 
+                //SideBar
+                ConstantsEdit.TrueFalse(ConstantsLocation_Platforms, "SideBar", SettingsModel.Settings.SideBar_Platforms);
+
                 //PlaatformBackgrounds
                 ConstantsEdit.TrueFalse(ConstantsLocation_Platforms, "PlatformImageBackgrounds", SettingsModel.Settings.PlatformBackgrounds_Platforms);
 
