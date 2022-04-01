@@ -746,5 +746,66 @@ namespace DKGThemeModifier
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
         }
+
+        private void NintendoSwitchish_Commit(object sender, EventArgs e)
+        {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Nintendo Switch-ish
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+            if (SettingsModel.Settings.IsThemeInstalled_SWITCH == true)
+            {
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //Set Constants Location
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                string ConstantsLocation_SWITCH = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\Constants.xaml";
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                string ReadConstatnts_PlayniteModernUI = File.ReadAllText(ConstantsLocation_SWITCH);
+
+                ConstantsEdit.TrueFalse(ConstantsLocation_SWITCH, "Intro", SettingsModel.Settings.ThemeIntro_SWITCH);
+
+                ConstantsEdit.TrueFalse(ConstantsLocation_SWITCH, "Trailers", SettingsModel.Settings.Trailers_SWITCH);
+            }
+
+            PlayniteApi.Dialogs.ShowMessage("Changes Applied");
+        }
+
+        //APPLY DEFAULTS
+        private void NintendoSwitchish_Defaults(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/Nintendo-Switch-ish/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\Constants.xaml");
+
+                PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
+            }
+        }
+
+        //DOWNLOAD ICONS FROM GITHUB
+        private void NintendoSwitchish_DownloadIcons(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFile(new Uri("https://github.com/davidkgriggs/DKG-Theme-Modifier/raw/main/DKGThemeModifier/FilterPresets/Icons/Icons.zip"), PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+
+                if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip"))
+                {
+                    ZipArchive OpenRead(string filename)
+                    {
+                        return new ZipArchive(File.OpenRead(filename), ZipArchiveMode.Read);
+                    }
+                    ZipArchive zipArchive = OpenRead(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+                    foreach (ZipArchiveEntry entry in zipArchive.Entries)
+                    {
+                        entry.ExtractToFile(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\" + entry.Name, true);
+                    }
+                    zipArchive.Dispose();
+
+                    //ZipFile.ExtractToDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip", PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\");
+                    File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+                    PlayniteApi.Dialogs.ShowMessage("Icons Downloaded");
+                }
+            }
+        }
+
     }
 }

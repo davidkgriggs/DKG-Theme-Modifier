@@ -18,6 +18,95 @@
                 </StackPanel>
             </TabItem>
 
+            <!--SWITCH-->
+            <TabItem Header="{Binding Settings.IsThemeInstalledHeader_SWITCH}">
+                <Grid>
+                    <Grid.Style>
+                        <Style>
+                            <Setter Property="ItemsControl.Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Settings.IsThemeInstalled_SWITCH}" Value="true">
+                                    <Setter Property="ItemsControl.Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <TabControl>
+                        <TabItem Header="General">
+                            <ScrollViewer>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="20,20,20,0">
+                                    <StackPanel.Resources>
+                                        <Style x:Key="ColourPicker_SWITCHStyle" TargetType="{x:Type RadioButton}" >
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                                                        <BulletDecorator HorizontalAlignment="Left" Background="{TemplateBinding Background}" Cursor="Hand" Height="30" Width="30">
+                                                            <BulletDecorator.Bullet>
+                                                                <Grid Height="30" Width="30">
+                                                                    <Border Name="RadioMark" Background="Transparent" BorderBrush="#909090" BorderThickness="4" Visibility="Hidden" />
+                                                                </Grid>
+                                                            </BulletDecorator.Bullet>
+                                                        </BulletDecorator>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsChecked" Value="true">
+                                                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsMouseOver" Value="true">
+                                                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </StackPanel.Resources>
+                                    <TextBlock Text="Apply Changes" FontSize="22" />
+                                    <Button Click="NintendoSwitchish_Commit" Content="Apply Changes" Margin="0,5,0,10"/>
+
+                                    <TextBlock Text="Restore Defaults" FontSize="22" />
+                                    <Button Click="NintendoSwitchish_Defaults" Content="Restore Defaults" Margin="0,5,0,10"/>
+
+                                    <TextBlock Text="Theme Intro" FontSize="22" Margin="0,0,0,5"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Width="200" Text="Enable Theme Intro:"/>
+                                        <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.ThemeIntro_SWITCH}"/>
+                                    </StackPanel>
+                                    
+                                    <TextBlock Text="Trailers" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Trailers:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.Trailers_SWITCH}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+
+                        <TabItem Header="Filter Presets">
+                            <ScrollViewer>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="20,20,20,0">
+                                    <TextBlock Text="Filter Preset Icons" FontSize="22" Margin="0,5,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="300" Text="Download Filter Preset Icons from GitHub:"/>
+                                            <Button Content="Download Icons" Click="NintendoSwitchish_DownloadIcons"  Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                                            <TextBlock Width="300" Text="Open Filter Preset Icons directory:"/>
+                                            <Button Content="Open Folder" Click="OpenFilterIcons" Margin="0,-5,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            
             <!--Platforms-->
             <TabItem Header="{Binding Settings.IsThemeInstalledHeader_Platforms}">
                 <Grid>

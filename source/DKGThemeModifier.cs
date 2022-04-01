@@ -137,6 +137,9 @@ namespace DKGThemeModifier
             settings.Settings.IsThemeInstalled_XBOXSERIESish = false;
             settings.Settings.IsThemeInstalledHeader_XBOXSERIESish = "";
 
+            settings.Settings.IsThemeInstalled_SWITCH = false;
+            settings.Settings.IsThemeInstalledHeader_SWITCH = "";
+
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\theme.yaml"))
             {
                 settings.Settings.IsThemeInstalled_PlayniteModernUI = true;
@@ -280,6 +283,14 @@ namespace DKGThemeModifier
             {
                 settings.Settings.IsThemeInstalled_XBOXSERIESish = true;
                 settings.Settings.IsThemeInstalledHeader_XBOXSERIESish = "XBOXSERIESish";
+            }
+
+            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\theme.yaml"))
+            {
+                settings.Settings.IsThemeInstalled_SWITCH = true;
+                settings.Settings.IsThemeInstalledHeader_SWITCH = "Nintendo Switch-ish";
+                string ConstantsLocation_SWITCH = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\Constants.xaml";
+                ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_SWITCH, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
             }
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
