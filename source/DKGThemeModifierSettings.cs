@@ -314,7 +314,7 @@ namespace DKGThemeModifier
         //###############################################################################################################
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Platforms
+        //Nintendo Switch-ish
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public bool IsThemeInstalled_SWITCH { get; set; } = false;
         public string IsThemeInstalledHeader_SWITCH { get; set; } = "";
@@ -322,6 +322,67 @@ namespace DKGThemeModifier
         public bool ThemeIntro_SWITCH { get; set; } = false;
 
         public bool Trailers_SWITCH { get; set; } = true;
+        //###############################################################################################################
+        //###############################################################################################################
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //EleganceFS
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public bool IsThemeInstalled_EleganceFS { get; set; } = false;
+        public string IsThemeInstalledHeader_EleganceFS { get; set; } = "";
+        public bool AutoDownloadMedia_EleganceFS { get; set; } = false;
+
+        //ColourPicker
+        public bool Colour1_EleganceFS { get; set; } = true;
+        public bool Colour2_EleganceFS { get; set; } = false;
+        public bool Colour3_EleganceFS { get; set; } = false;
+        public bool Colour4_EleganceFS { get; set; } = false;
+        public bool Colour5_EleganceFS { get; set; } = false;
+        public bool Colour6_EleganceFS { get; set; } = false;
+        public bool Colour7_EleganceFS { get; set; } = false;
+        public bool Colour8_EleganceFS { get; set; } = false;
+        public bool Colour9_EleganceFS { get; set; } = false;
+        public bool Colour10_EleganceFS { get; set; } = false;
+        public bool Colour11_EleganceFS { get; set; } = false;
+
+        //VideoCovers
+        public bool VideoCovers_EleganceFS { get; set; } = true;
+
+        //VideoBackgrounds
+        public bool VideoBackgrounds_EleganceFS { get; set; } = false;
+
+        //Trailers
+        public bool Trailers_EleganceFS { get; set; } = true;
+        //###############################################################################################################
+        //###############################################################################################################
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //EleganceDT
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public bool IsThemeInstalled_EleganceDT { get; set; } = false;
+        public string IsThemeInstalledHeader_EleganceDT { get; set; } = "";
+
+        //ColourPicker
+        public bool Colour1_EleganceDT { get; set; } = true;
+        public bool Colour2_EleganceDT { get; set; } = false;
+        public bool Colour3_EleganceDT { get; set; } = false;
+        public bool Colour4_EleganceDT { get; set; } = false;
+        public bool Colour5_EleganceDT { get; set; } = false;
+        public bool Colour6_EleganceDT { get; set; } = false;
+        public bool Colour7_EleganceDT { get; set; } = false;
+        public bool Colour8_EleganceDT { get; set; } = false;
+        public bool Colour9_EleganceDT { get; set; } = false;
+        public bool Colour10_EleganceDT { get; set; } = false;
+        public bool Colour11_EleganceDT { get; set; } = false;
+
+        //VideoCovers
+        public bool VideoCovers_EleganceDT { get; set; } = true;
+
+        //VideoBackgrounds
+        public bool VideoBackgrounds_EleganceDT { get; set; } = false;
+
+        //Trailers
+        public bool Trailers_EleganceDT { get; set; } = true;
         //###############################################################################################################
         //###############################################################################################################
 

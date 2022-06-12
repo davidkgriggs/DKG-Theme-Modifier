@@ -5,8 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DKGThemeModifier"
              xmlns:sdk="clr-namespace:Playnite.SDK.Controls;assembly=Playnite.SDK"
-             mc:Ignorable="d">
-    <Grid Width="335" MaxHeight="450">
-        
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="1000" >
+    <Grid>
+        <Border Background="#606060" CornerRadius="20"/>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="20,20,20,0">
+            <StackPanel.Resources>
+            </StackPanel.Resources>
+            <Button Content="HDR" Click="{Binding HDRCommand}" Width="100" />
+        </StackPanel>
     </Grid>
 </PluginUserControl>

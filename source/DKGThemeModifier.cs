@@ -292,6 +292,21 @@ namespace DKGThemeModifier
                 string ConstantsLocation_SWITCH = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\Constants.xaml";
                 ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_SWITCH, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
             }
+
+            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_9ca210b3-db1c-4fdc-a555-96474a4fba49\theme.yaml"))
+            {
+                settings.Settings.IsThemeInstalled_EleganceFS = true;                
+                string ConstantsLocation_EleganceFS = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_9ca210b3-db1c-4fdc-a555-96474a4fba49\Constants.xaml";
+                ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_EleganceFS, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
+            }
+            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Desktop\Elegance_37b0c944-eb21-462f-8df7-0b3acd6d1e68\theme.yaml"))
+            {
+                settings.Settings.IsThemeInstalled_EleganceDT = true;
+            }
+            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_9ca210b3-db1c-4fdc-a555-96474a4fba49\theme.yaml") || File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Desktop\Elegance_37b0c944-eb21-462f-8df7-0b3acd6d1e68\theme.yaml"))
+            {
+                settings.Settings.IsThemeInstalledHeader_EleganceFS = "Elegance";
+            }
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

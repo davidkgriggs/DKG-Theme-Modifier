@@ -33,5 +33,10 @@ namespace DKGThemeModifier
             SettingsModel = settings;
         }
 
+        private void HDRCommand(object sender, EventArgs e)
+        {
+            Process.Start(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FullscreenTools\HDRSwitch.exe", "hdr");
+        }
+
     }
 }

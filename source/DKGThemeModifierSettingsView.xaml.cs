@@ -99,7 +99,32 @@ namespace DKGThemeModifier
                 string ReadConstatnts_PlayniteModernUI = File.ReadAllText(ConstantsLocation_PlayniteModernUI);
 
                 //COLOUR PICKER
-                if (SettingsModel.Settings.Colour1_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "54A81B"); }
+
+
+                if (SettingsModel.Settings.Colour1_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "54A81B", "488E19", "54A81B", "6CD327", "305D12"); }
+                if (SettingsModel.Settings.Colour2_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "107C10", "0C5F0C", "107C10", "199819", "083808"); }
+                if (SettingsModel.Settings.Colour3_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "108272", "0C6357", "108272", "17B29C", "084139"); }
+                if (SettingsModel.Settings.Colour4_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "148282", "0F5F5F", "148282", "1FAEAE", "0A3E3E"); }
+                if (SettingsModel.Settings.Colour5_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "1081CA", "0C6198", "1081CA", "139BF1", "083F62"); }
+                if (SettingsModel.Settings.Colour6_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "1073D6", "0C5CAD", "1073D6", "3695F5", "083D72"); }
+                if (SettingsModel.Settings.Colour7_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "193E91", "163479", "193E91", "4479EF", "102554"); }
+                if (SettingsModel.Settings.Colour8_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "744DA9", "5A3B83", "744DA9", "9E6FDF", "372550"); }
+                if (SettingsModel.Settings.Colour9_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "B144C0", "943AA0", "B144C0", "DD71EC", "6B2B74"); }
+                if (SettingsModel.Settings.Colour10_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "ED5588", "C64772", "ED5588", "F2749E", "8D3351"); }
+                if (SettingsModel.Settings.Colour11_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "BF1077", "980E5F", "BF1077", "EA49A7", "630A3E"); }
+                if (SettingsModel.Settings.Colour12_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "A21025", "7E0E1E", "A21025", "CC394E", "620D19"); }
+                if (SettingsModel.Settings.Colour13_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "E31123", "BD0F1E", "E31123", "D73644", "7C0A14"); }
+                if (SettingsModel.Settings.Colour14_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "EB4910", "C33E10", "EB4910", "F3774C", "8D2E0D"); }
+                if (SettingsModel.Settings.Colour15_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "EB8C10", "C4750F", "EB8C10", "DE9940", "94590D"); }
+                if (SettingsModel.Settings.Colour16_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "724F2F", "523A23", "724F2F", "997756", "362718"); }
+                if (SettingsModel.Settings.Colour17_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "7E715C", "5E5545", "7E715C", "9D8E76", "3F392F"); }
+                if (SettingsModel.Settings.Colour18_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "547A72", "415D57", "547A72", "719C93", "2C3E3A"); }
+                if (SettingsModel.Settings.Colour19_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "677488", "4D5664", "677488", "8896AD", "353B44"); }
+                if (SettingsModel.Settings.Colour20_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "737373", "525151", "737373", "898989", "333333"); }
+                if (SettingsModel.Settings.Colour21_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "4C4A4B", "3F3E3F", "4C4A4B", "6C6B6C", "2A292A"); }
+                if (SettingsModel.Settings.Colour22_PlayniteModernUI == true) { ConstantsEdit.PlayniteModernUIColours(ConstantsLocation_PlayniteModernUI, "00BAAF", "2795AE", "00BAAF", "83F9F2", "298984"); }
+
+                /*if (SettingsModel.Settings.Colour1_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "54A81B"); }
                 if (SettingsModel.Settings.Colour2_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "107C10"); }
                 if (SettingsModel.Settings.Colour3_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "108272"); }
                 if (SettingsModel.Settings.Colour4_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "148282"); }
@@ -120,7 +145,7 @@ namespace DKGThemeModifier
                 if (SettingsModel.Settings.Colour19_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "677488"); }
                 if (SettingsModel.Settings.Colour20_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "737373"); }
                 if (SettingsModel.Settings.Colour21_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "4C4A4B"); }
-                if (SettingsModel.Settings.Colour22_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "00BAAF"); }
+                if (SettingsModel.Settings.Colour22_PlayniteModernUI == true) { ConstantsEdit.ColourPicker(ConstantsLocation_PlayniteModernUI, "00BAAF"); }*/
 
                 //ThemeIntro
                 ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "Intro", SettingsModel.Settings.ThemeIntro_PlayniteModernUI);
@@ -804,6 +829,121 @@ namespace DKGThemeModifier
                     File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
                     PlayniteApi.Dialogs.ShowMessage("Icons Downloaded");
                 }
+            }
+        }
+
+        private void EleganceFS_Commit(object sender, EventArgs e)
+        {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Elegance Fullscreen
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+            if (SettingsModel.Settings.IsThemeInstalled_EleganceFS == true)
+            {
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //Set Constants Location
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                string ConstantsLocation_EleganceFS = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_9ca210b3-db1c-4fdc-a555-96474a4fba49\Constants.xaml";
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                string ReadConstatnts_PlayniteModernUI = File.ReadAllText(ConstantsLocation_EleganceFS);
+
+                //COLOUR PICKER
+                if (SettingsModel.Settings.Colour1_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "34ACBC", "065464", "34ACBC", "85C3CF", "11373C"); }
+                if (SettingsModel.Settings.Colour2_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "FF0000", "A40000", "FF0000", "EA6363", "4A1515"); }
+                if (SettingsModel.Settings.Colour3_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "FFA500", "D18700", "FFA500", "CFAF85", "927030"); }
+                if (SettingsModel.Settings.Colour4_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "ECE201", "DED639", "ECE201", "FFF97C", "949035"); }
+                if (SettingsModel.Settings.Colour5_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "83E200", "60A400", "83E200", "AFFF3F", "598120"); }
+                if (SettingsModel.Settings.Colour6_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "0E7A0D", "0A5409", "0E7A0D", "68E468", "0F420F"); }
+                if (SettingsModel.Settings.Colour7_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "7AD7F0", "457E8D", "7AD7F0", "ACECFC", "164A58"); }
+                if (SettingsModel.Settings.Colour8_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "006FCD", "004C8D", "006FCD", "67B9FF", "012F57"); }
+                if (SettingsModel.Settings.Colour9_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "00BAAF", "2795AE", "00BAAF", "83F9F2", "0B514D"); }
+                if (SettingsModel.Settings.Colour10_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "9D16FF", "540091", "9D16FF", "BD61FF", "411263"); }
+                if (SettingsModel.Settings.Colour11_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "C600AC", "982BAD", "C600AC", "ED8FFF", "601256"); }
+
+                ConstantsEdit.TrueFalse(ConstantsLocation_EleganceFS, "Trailers", SettingsModel.Settings.Trailers_EleganceFS);
+            }
+
+            PlayniteApi.Dialogs.ShowMessage("Changes Applied");
+        }
+
+        //APPLY DEFAULTS
+        private void EleganceFS_Defaults(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/Nintendo-Switch-ish/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\Constants.xaml");
+
+                PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
+            }
+        }
+
+        //DOWNLOAD ICONS FROM GITHUB
+        private void EleganceFS_DownloadIcons(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFile(new Uri("https://github.com/davidkgriggs/DKG-Theme-Modifier/raw/main/DKGThemeModifier/FilterPresets/Icons/Icons.zip"), PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+
+                if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip"))
+                {
+                    ZipArchive OpenRead(string filename)
+                    {
+                        return new ZipArchive(File.OpenRead(filename), ZipArchiveMode.Read);
+                    }
+                    ZipArchive zipArchive = OpenRead(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+                    foreach (ZipArchiveEntry entry in zipArchive.Entries)
+                    {
+                        entry.ExtractToFile(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\" + entry.Name, true);
+                    }
+                    zipArchive.Dispose();
+
+                    //ZipFile.ExtractToDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip", PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\");
+                    File.Delete(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons\Icons.zip");
+                    PlayniteApi.Dialogs.ShowMessage("Icons Downloaded");
+                }
+            }
+        }
+
+        private void EleganceDT_Commit(object sender, EventArgs e)
+        {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Elegance Fullscreen
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+            if (SettingsModel.Settings.IsThemeInstalled_EleganceDT == true)
+            {
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                //Set Constants Location
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                string ConstantsLocation_EleganceDT = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Desktop\Elegance_37b0c944-eb21-462f-8df7-0b3acd6d1e68\Constants.xaml";
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                string ReadConstatnts_PlayniteModernUI = File.ReadAllText(ConstantsLocation_EleganceDT);
+
+                //COLOUR PICKER
+                if (SettingsModel.Settings.Colour1_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "34ACBC", "065464", "28818D", "34ACBC", "34ACBC", "8834ACBC", "28818D", "065464"); }
+                if (SettingsModel.Settings.Colour2_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "FF0000", "A40000", "AA2F2F", "FF0000", "FF0000", "88FF0000", "AA2F2F", "A40000"); }
+                if (SettingsModel.Settings.Colour3_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "FFA500", "D18700", "CE9630", "FFA500", "FFA500", "88FFA500", "CE9630", "D18700"); }
+                if (SettingsModel.Settings.Colour4_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "ECE201", "DED639", "C1BA28", "ECE201", "ECE201", "88ECE201", "C1BA28", "DED639"); }
+                if (SettingsModel.Settings.Colour5_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "83E200", "60A400", "7DBC27", "83E200", "83E200", "8883E200", "7DBC27", "60A400"); }
+                if (SettingsModel.Settings.Colour6_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "0E7A0D", "0A5409", "2B5A2B", "0E7A0D", "0E7A0D", "880E7A0D", "2B5A2B", "0A5409"); }
+                if (SettingsModel.Settings.Colour7_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "7AD7F0", "457E8D", "327A8D", "7AD7F0", "7AD7F0", "887AD7F0", "327A8D", "327A8D"); }
+                if (SettingsModel.Settings.Colour8_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "006FCD", "004C8D", "295E8B", "006FCD", "006FCD", "88006FCD", "295E8B", "004C8D"); }
+                if (SettingsModel.Settings.Colour9_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "00BAAF", "2795AE", "298984", "00BAAF", "00BAAF", "8800BAAF", "298984", "2795AE"); }
+                if (SettingsModel.Settings.Colour10_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "9D16FF", "540091", "67328E", "9D16FF", "9D16FF", "889D16FF", "67328E", "540091"); }
+                if (SettingsModel.Settings.Colour11_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "C600AC", "982BAD", "8B247D", "C600AC", "C600AC", "88C600AC", "8B247D", "982BAD"); }
+
+                //ConstantsEdit.TrueFalse(ConstantsLocation_EleganceDT, "Trailers", SettingsModel.Settings.Trailers_EleganceDT);
+            }
+
+            PlayniteApi.Dialogs.ShowMessage("Changes Applied");
+        }
+
+        //APPLY DEFAULTS
+        private void EleganceDT_Defaults(object sender, EventArgs e)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/Nintendo-Switch-ish/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\Constants.xaml");
+
+                PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
         }
 
