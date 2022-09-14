@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DKGThemeModifier
 {
-    public class DKGThemeModifierSettings: ObservableObject
+    public class DKGThemeModifierSettings
     {
         public string DKGThemeModifierCurrentVersion { get; set; } = "";
 
@@ -413,7 +413,7 @@ namespace DKGThemeModifier
 
         //FOR SHOWCASE
         private int numberOfGames = 10;
-        public int NumberOfGames { get => numberOfGames; set { SetValue(ref numberOfGames, value); } }
+        public int NumberOfGames { get; set; } = 0;
         //###############################################################################################################
         //###############################################################################################################
 
