@@ -19,6 +19,19 @@ namespace DKGThemeModifier
             return null;
         }
 
+        public static object RestoreDefaults(string path, string sStart, string sEnd)
+        {
+            string ConstantsLocation = path;
+            string ConstantsRead = System.IO.File.ReadAllText(ConstantsLocation);
+            int Start = ConstantsRead.IndexOf(sStart);
+            int End = ConstantsRead.IndexOf(sEnd);
+            string TextBefore = ConstantsRead.Substring(0, Start);
+            string TextAfter = ConstantsRead.Substring(End);
+            string Replaced = TextBefore + sStart + TextAfter;
+            System.IO.File.WriteAllText(ConstantsLocation, Replaced);
+            return null;
+        }
+
         public static object TrueFalse(string path, string search, bool replace)
         {
             string ConstantsLocation = path;

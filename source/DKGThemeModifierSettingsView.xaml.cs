@@ -198,6 +198,30 @@ namespace DKGThemeModifier
 
                 string sListGamesHeight = SettingsModel.Settings.ListGamesHeight_PlayniteModernUI.ToString();
                 ConstantsEdit.ListGameHeight(ConstantsLocation_PlayniteModernUI, sListGamesHeight);
+
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "BackgroundStretchNew", SettingsModel.Settings.BackgroundStretchNew_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "BackgroundBlur", SettingsModel.Settings.BackgroundBlur_PlayniteModernUI);
+
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Platform", SettingsModel.Settings.GameDetails_Platform_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Genres", SettingsModel.Settings.GameDetails_Genres_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Developers", SettingsModel.Settings.GameDetails_Developers_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Publishers", SettingsModel.Settings.GameDetails_Publishers_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Categories", SettingsModel.Settings.GameDetails_Categories_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Features", SettingsModel.Settings.GameDetails_Features_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Tags", SettingsModel.Settings.GameDetails_Tags_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Series", SettingsModel.Settings.GameDetails_Series_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_AgeRatings", SettingsModel.Settings.GameDetails_AgeRatings_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Regions", SettingsModel.Settings.GameDetails_Regions_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Source", SettingsModel.Settings.GameDetails_Source_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Version", SettingsModel.Settings.GameDetails_Version_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_UserScore", SettingsModel.Settings.GameDetails_UserScore_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_CommunityScore", SettingsModel.Settings.GameDetails_CommunityScore_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_PlayCount", SettingsModel.Settings.GameDetails_PlayCount_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Added", SettingsModel.Settings.GameDetails_Added_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Modified", SettingsModel.Settings.GameDetails_Modified_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Notes", SettingsModel.Settings.GameDetails_Notes_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_GameID", SettingsModel.Settings.GameDetails_GameID_PlayniteModernUI);
+                ConstantsEdit.TrueFalse(ConstantsLocation_PlayniteModernUI, "GameDetails_Favourite", SettingsModel.Settings.GameDetails_Favourite_PlayniteModernUI);
             }
 
             PlayniteApi.Dialogs.ShowMessage("Changes Applied");
@@ -212,6 +236,8 @@ namespace DKGThemeModifier
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
+
+            ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_PlayniteModernUI\": \"PlayniteModernUI\",", "\"IsThemeInstalled_PS5ish\"");
         }
 
         //DOWNLOAD ICONS FROM GITHUB
@@ -384,6 +410,8 @@ namespace DKGThemeModifier
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
+
+            ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_PS5ish\": \"PS5ish\",", "\"IsThemeInstalled_XBOXSERIESish\"");
         }
 
         private void PalyniteDeck_Commit(object sender, EventArgs e)
@@ -445,6 +473,8 @@ namespace DKGThemeModifier
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
+
+            ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_PlayniteDeck\": \"Playnite Deck\",", "\"IsThemeInstalled_Platforms\"");
         }
 
         private void Platforms_Commit(object sender, EventArgs e)
@@ -542,6 +572,8 @@ namespace DKGThemeModifier
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
+
+            ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_Platforms\": \"Platforms\",", "\"IsThemeInstalled_SWITCH\"");
         }
 
         //DOWNLOAD PLATFORMBACKGROUNDS FROM GITHUB
@@ -770,6 +802,8 @@ namespace DKGThemeModifier
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
+
+            ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_XBOXSERIESish\": \"XBOXSERIESish\",", "\"IsThemeInstalled_PlayniteDeck\"");
         }
 
         private void NintendoSwitchish_Commit(object sender, EventArgs e)
@@ -803,6 +837,8 @@ namespace DKGThemeModifier
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
+
+            ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_SWITCH\": \"Nintendo Switch-ish\",", "\"IsThemeInstalled_EleganceFS\"");
         }
 
         //DOWNLOAD ICONS FROM GITHUB
@@ -870,10 +906,12 @@ namespace DKGThemeModifier
         {
             using (WebClient webClient = new WebClient())
             {
-                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/Nintendo-Switch-ish/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\Constants.xaml");
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/Elegance_Fullscreen/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_9ca210b3-db1c-4fdc-a555-96474a4fba49\Constants.xaml");
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
+
+            ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_EleganceFS\": \"Elegance\",", "\"IsThemeInstalled_EleganceDT\"");
         }
 
         //DOWNLOAD ICONS FROM GITHUB
@@ -941,10 +979,12 @@ namespace DKGThemeModifier
         {
             using (WebClient webClient = new WebClient())
             {
-                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/Nintendo-Switch-ish/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7\Constants.xaml");
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/Elegance_Desktop/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_37b0c944-eb21-462f-8df7-0b3acd6d1e68\Constants.xaml");
 
                 PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
             }
+
+            ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_EleganceDT\": \"Elegance\",", "\"NumberOfGames\"");
         }
 
     }

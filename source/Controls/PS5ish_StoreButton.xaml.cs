@@ -37,5 +37,22 @@ namespace DKGThemeModifier
         {
             Process.Start(SettingsModel.Settings.PS5ish_StoreWebsite);
         }
+
+        private void Container_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Process p = new Process();
+            p.StartInfo = new ProcessStartInfo(PlayniteApi.Paths.ConfigurationPath + @"\Extensions\DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520\Utilities\XboxControllerAsKeyboard\XboxControllerAsKeyboard_DKGThemeModifier.exe");
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.UseShellExecute = false;
+            p.Start();
+        }
+
+        private void Container_LostFocus(object sender, RoutedEventArgs e)
+        {
+            foreach (var process in Process.GetProcessesByName("XboxControllerAsKeyboard_DKGThemeModifier"))
+            {
+                process.Kill();
+            }
+        }
     }
 }

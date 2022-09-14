@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DKGThemeModifier"
              xmlns:sdk="clr-namespace:Playnite.SDK.Controls;assembly=Playnite.SDK"
              mc:Ignorable="d">
-    <Grid>
+    <Grid LostFocus="Container_LostFocus" GotFocus="Container_GotFocus">
         <Button Click="button1_Click" >
             <Button.Style>
                 <Style TargetType="Button">

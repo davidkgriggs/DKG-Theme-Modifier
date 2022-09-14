@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DKGThemeModifier
 {
-    public class DKGThemeModifierSettings
+    public class DKGThemeModifierSettings: ObservableObject
     {
         public string DKGThemeModifierCurrentVersion { get; set; } = "";
 
@@ -102,7 +102,31 @@ namespace DKGThemeModifier
         //DropShadows
         public bool DropShadows_PlayniteModernUI { get; set; } = false;
 
-        public int ListGamesHeight_PlayniteModernUI { get; set; } = 600;
+        public int ListGamesHeight_PlayniteModernUI { get; set; } = 630;
+
+        public bool BackgroundStretchNew_PlayniteModernUI { get; set; } = true;
+        public bool BackgroundBlur_PlayniteModernUI { get; set; } = false;
+
+        public bool GameDetails_Platform_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Genres_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Developers_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Publishers_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Categories_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Features_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Tags_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Series_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_AgeRatings_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Regions_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Source_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Version_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_UserScore_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_CommunityScore_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_PlayCount_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Added_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Modified_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Notes_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_GameID_PlayniteModernUI { get; set; } = true;
+        public bool GameDetails_Favourite_PlayniteModernUI { get; set; } = true;
         //###############################################################################################################
         //###############################################################################################################
 
@@ -383,6 +407,13 @@ namespace DKGThemeModifier
 
         //Trailers
         public bool Trailers_EleganceDT { get; set; } = true;
+        //###############################################################################################################
+        //###############################################################################################################
+
+
+        //FOR SHOWCASE
+        private int numberOfGames = 10;
+        public int NumberOfGames { get => numberOfGames; set { SetValue(ref numberOfGames, value); } }
         //###############################################################################################################
         //###############################################################################################################
 

@@ -729,7 +729,7 @@
                                         <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.IntroVideoVolume_PlayniteModernUI}"/>
                                     </StackPanel>
 
-                                    <TextBlock Text="Title/Logo" FontSize="22" Margin="0,5,0,5"/>
+                                    <TextBlock Text="Title/Logo" FontSize="22" Margin="0,15,0,5"/>
                                     <StackPanel>
                                         <StackPanel>
                                             <StackPanel Orientation="Horizontal">
@@ -739,7 +739,7 @@
                                         </StackPanel>
                                     </StackPanel>
 
-                                    <TextBlock Text="Background" FontSize="22" Margin="0,5,0,5"/>
+                                    <TextBlock Text="Background" FontSize="22" Margin="0,15,0,5"/>
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <StackPanel>
@@ -748,9 +748,22 @@
                                             </StackPanel>
                                             <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.VideoBackgrounds_PlayniteModernUI}"/>
                                         </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                            <TextBlock Width="200" Text="Background Stretch With Fade:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.BackgroundStretchNew_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        
+                                        <StackPanel Orientation="Horizontal">
+                                            <StackPanel>
+                                                <TextBlock Width="200" Text="Background Blur:"/>
+                                                <TextBlock Width="200" Text="(BEWARE CAUSES PERFORMANCE IMPACT!)" FontSize="10"/>
+                                            </StackPanel>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.BackgroundBlur_PlayniteModernUI}"/>
+                                        </StackPanel>
                                     </StackPanel>
 
-                                    <TextBlock Text="Drop Shadows" FontSize="22" Margin="0,10,0,5"/>
+                                    <TextBlock Text="Drop Shadows" FontSize="22" Margin="0,20,0,5"/>
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <StackPanel>
@@ -761,7 +774,7 @@
                                         </StackPanel>
                                     </StackPanel>
                                     
-                                    <TextBlock Text="Covers" FontSize="22" Margin="0,10,0,5"/>
+                                    <TextBlock Text="Covers" FontSize="22" Margin="0,20,0,5"/>
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <StackPanel>
@@ -790,7 +803,7 @@
                                         </StackPanel>
                                     </StackPanel>
 
-                                    <TextBlock Text="List Games Height" FontSize="22" Margin="0,0,0,5"/>
+                                    <TextBlock Text="List Games Height" FontSize="22" Margin="0,20,0,5"/>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="List Games Height: " FontSize="16" Margin="0,0,0,5"/>
                                         <TextBlock Text="{Binding Settings.ListGamesHeight_PlayniteModernUI}" FontSize="16" Margin="0,0,0,5"/>
@@ -798,7 +811,7 @@
                                     <Slider IsSnapToTickEnabled="True" Minimum="300" Maximum="800" Value="{Binding Settings.ListGamesHeight_PlayniteModernUI}" 
                                             VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="500" Margin="0,0,0,10"/>
 
-                                    <TextBlock Text="Trailers" FontSize="22" Margin="0,5,0,5"/>
+                                    <TextBlock Text="Trailers" FontSize="22" Margin="0,20,0,5"/>
                                     <StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Width="200" Text="Trailers:"/>
@@ -806,7 +819,7 @@
                                         </StackPanel>
                                     </StackPanel>
 
-                                    <TextBlock Text="Grid View - Side Bar" FontSize="22" Margin="0,5,0,5"/>
+                                    <TextBlock Text="Grid View - Side Bar" FontSize="22" Margin="0,20,0,5"/>
                                     <StackPanel>
                                         <StackPanel>
                                             <StackPanel Orientation="Horizontal">
@@ -816,7 +829,7 @@
                                         </StackPanel>
                                     </StackPanel>
 
-                                    <TextBlock Text="Game Description" FontSize="22" Margin="0,5,0,5"/>
+                                    <TextBlock Text="Game Description" FontSize="22" Margin="0,20,0,5"/>
                                     <StackPanel>
                                         <StackPanel>
                                             <StackPanel Orientation="Horizontal">
@@ -826,6 +839,90 @@
                                         </StackPanel>
                                     </StackPanel>
 
+                                    <TextBlock Text="Game Details" FontSize="22" Margin="0,20,0,5"/>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Platform:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Platform_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Genres:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Genres_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Developers:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Developers_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Publishers:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Publishers_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Categories:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Categories_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Features:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Features_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Tags:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Tags_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Series:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Series_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="AgeRatings:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_AgeRatings_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Regions:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Regions_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Source:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Source_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Version:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Version_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="UserScore:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_UserScore_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="CommunityScore:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_CommunityScore_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="PlayCount:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_PlayCount_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Added:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Added_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Modified:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Modified_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Notes:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Notes_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="GameID:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_GameID_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Width="200" Text="Favourite:"/>
+                                            <CheckBox Height="20" Margin="0,0,0,5" IsChecked="{Binding Settings.GameDetails_Favourite_PlayniteModernUI}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    
                                 </StackPanel>
                             </ScrollViewer>
                         </TabItem>
@@ -969,7 +1066,7 @@
                                         <TextBlock Text="{Binding Settings.IntroLength_PS5ish}" FontSize="16" Margin="0,0,0,5"/>
                                         <TextBlock Text=" seconds" FontSize="16" Margin="0,0,0,5"/>
                                     </StackPanel>
-                                    <Slider IsSnapToTickEnabled="True" Minimum="1" Maximum="30" Value="{Binding Settings.IntroLength_PS5ish}" 
+                                    <Slider IsSnapToTickEnabled="True" Minimum="0.1" Maximum="60" Value="{Binding Settings.IntroLength_PS5ish}" 
                                 VerticalAlignment="Center" Height="Auto" HorizontalAlignment="Left" Width="300" Margin="0,0,0,10"/>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Width="200" Text="Enable Intro Video:"/>

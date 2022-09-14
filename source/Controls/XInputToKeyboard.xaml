@@ -1,0 +1,11 @@
+﻿<PluginUserControl x:Class="DKGThemeModifier.Controls.XInputToKeyboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DKGThemeModifier.Controls"
+             mc:Ignorable="d">
+    <Grid x:Name="Container" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" SizeChanged="Container_SizeChanged">
+        <ContentPresenter/>
+    </Grid>
+</PluginUserControl>

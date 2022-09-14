@@ -17,13 +17,16 @@ using System.Runtime.CompilerServices;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.IO.Compression;
-
+using System.Diagnostics;
+using DKGThemeModifier.Controls;
 
 namespace DKGThemeModifier
 {
     public class DKGThemeModifier : GenericPlugin
     {
         private static readonly ILogger logger = LogManager.GetLogger();
+
+        public static DKGThemeModifier Instance { get; private set; } = null;
 
         private DKGThemeModifierSettingsViewModel settings { get; set; }
 
@@ -39,7 +42,7 @@ namespace DKGThemeModifier
 
             AddCustomElementSupport(new AddCustomElementSupportArgs
             {
-                ElementList = new List<string> { "PS5ish_StoreButton", "PlayniteModernUI_Options", "PlatformDescriptions" },
+                ElementList = new List<string> { "XInputToKeyboard", "PS5ish_StoreButton", "PlayniteModernUI_Options", "PlatformDescriptions" },
                 SourceName = "DKGThemeModifier",
             });
 
@@ -52,6 +55,10 @@ namespace DKGThemeModifier
 
         public override Control GetGameViewControl(GetGameViewControlArgs args)
         {
+            if (args.Name == "XInputToKeyboard")
+            {
+                return new XInputToKeyboard(PlayniteApi, settings);
+            }
             if (args.Name == "PS5ish_StoreButton")
             {
                 return new PS5ish_StoreButton(PlayniteApi, settings);
@@ -97,6 +104,11 @@ namespace DKGThemeModifier
         {
             // Add code to be executed when Playnite is initialized.
 
+            foreach (var process in Process.GetProcessesByName("XboxControllerAsKeyboard_DKGThemeModifier"))
+            {
+                process.Kill();
+            }
+
             //Create FilterPreset Directorys
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons");
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformBackgrounds");
@@ -139,6 +151,14 @@ namespace DKGThemeModifier
 
             settings.Settings.IsThemeInstalled_SWITCH = false;
             settings.Settings.IsThemeInstalledHeader_SWITCH = "";
+
+            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUIModded\theme.yaml"))
+            {
+                settings.Settings.IsThemeInstalled_PlayniteModernUI = true;
+                settings.Settings.IsThemeInstalledHeader_PlayniteModernUI = "PlayniteModernUIModded";
+                string ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUIModded\Constants.xaml";
+                ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_PlayniteModernUI, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
+            }
 
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\theme.yaml"))
             {
@@ -316,7 +336,11 @@ namespace DKGThemeModifier
         public override void OnApplicationStopped(OnApplicationStoppedEventArgs args)
         {
             // Add code to be executed when Playnite is shutting down.
-           
+            foreach (var process in Process.GetProcessesByName("XboxControllerAsKeyboard_DKGThemeModifier"))
+            {
+                process.Kill();
+            }
+
         }
 
         public override void OnLibraryUpdated(OnLibraryUpdatedEventArgs args)
