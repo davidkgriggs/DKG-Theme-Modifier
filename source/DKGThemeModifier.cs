@@ -156,16 +156,16 @@ namespace DKGThemeModifier
             {
                 settings.Settings.IsThemeInstalled_PlayniteModernUI = true;
                 settings.Settings.IsThemeInstalledHeader_PlayniteModernUI = "PlayniteModernUIModded";
-                string ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUIModded\Constants.xaml";
-                ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_PlayniteModernUI, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
+                settings.Settings.ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUIModded\Constants.xaml";
+                ConstantsEdit.DKGThemeModifierDirectory(settings.Settings.ConstantsLocation_PlayniteModernUI, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
             }
 
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\theme.yaml"))
             {
                 settings.Settings.IsThemeInstalled_PlayniteModernUI = true;
                 settings.Settings.IsThemeInstalledHeader_PlayniteModernUI = "PlayniteModernUI";
-                string ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml";
-                ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_PlayniteModernUI, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
+                settings.Settings.ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml";
+                ConstantsEdit.DKGThemeModifierDirectory(settings.Settings.ConstantsLocation_PlayniteModernUI, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
             }
 
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PS5ish_676e10ec-adfe-48d8-a1bd-4d5771b5a2ca\theme.yaml"))

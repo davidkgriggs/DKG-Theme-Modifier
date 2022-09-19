@@ -17,6 +17,7 @@ namespace DKGThemeModifier
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public bool IsThemeInstalled_PlayniteModernUI { get; set; } = false;
         public string IsThemeInstalledHeader_PlayniteModernUI { get; set; } = "";
+        public string ConstantsLocation_PlayniteModernUI { get; set; } = "";
 
         //ProfileName
         public string ProfileName_PlayniteModernUI { get; set; } = "PlayniteModernUI";
