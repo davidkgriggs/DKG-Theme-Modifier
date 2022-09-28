@@ -105,7 +105,7 @@ namespace DKGThemeModifier
 
         public int ListGamesHeight_PlayniteModernUI { get; set; } = 630;
 
-        public bool BackgroundStretchNew_PlayniteModernUI { get; set; } = true;
+        public bool BackgroundStretchNew_PlayniteModernUI { get; set; } = false;
         public bool BackgroundBlur_PlayniteModernUI { get; set; } = false;
 
         public bool GameDetails_Platform_PlayniteModernUI { get; set; } = true;
@@ -358,6 +358,7 @@ namespace DKGThemeModifier
         public bool AutoDownloadMedia_EleganceFS { get; set; } = false;
 
         //ColourPicker
+        public bool Colour0_EleganceFS { get; set; } = false;
         public bool Colour1_EleganceFS { get; set; } = true;
         public bool Colour2_EleganceFS { get; set; } = false;
         public bool Colour3_EleganceFS { get; set; } = false;
@@ -388,6 +389,7 @@ namespace DKGThemeModifier
         public string IsThemeInstalledHeader_EleganceDT { get; set; } = "";
 
         //ColourPicker
+        public bool Colour0_EleganceDT { get; set; } = false;
         public bool Colour1_EleganceDT { get; set; } = true;
         public bool Colour2_EleganceDT { get; set; } = false;
         public bool Colour3_EleganceDT { get; set; } = false;
@@ -437,6 +439,15 @@ namespace DKGThemeModifier
             {
                 settings = value;
                 OnPropertyChanged();
+            }
+        }
+
+        public DKGThemeModifierSettings SettingsDefaults
+        {
+            get => editingClone;
+            set
+            {
+                editingClone = value;
             }
         }
 

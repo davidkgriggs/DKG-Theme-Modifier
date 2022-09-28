@@ -103,6 +103,7 @@ namespace DKGThemeModifier
         public override void OnApplicationStarted(OnApplicationStartedEventArgs args)
         {
             // Add code to be executed when Playnite is initialized.
+            settings.EndEdit();
 
             foreach (var process in Process.GetProcessesByName("XboxControllerAsKeyboard_DKGThemeModifier"))
             {
@@ -117,11 +118,6 @@ namespace DKGThemeModifier
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformLogos");
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformScreenshots");
             Directory.CreateDirectory(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformTrailers");
-
-
-            
-
-
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -155,7 +151,7 @@ namespace DKGThemeModifier
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUIModded\theme.yaml"))
             {
                 settings.Settings.IsThemeInstalled_PlayniteModernUI = true;
-                settings.Settings.IsThemeInstalledHeader_PlayniteModernUI = "PlayniteModernUIModded";
+                settings.Settings.IsThemeInstalledHeader_PlayniteModernUI = "PlayniteModernUI";
                 settings.Settings.ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUIModded\Constants.xaml";
                 ConstantsEdit.DKGThemeModifierDirectory(settings.Settings.ConstantsLocation_PlayniteModernUI, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
             }
@@ -166,6 +162,7 @@ namespace DKGThemeModifier
                 settings.Settings.IsThemeInstalledHeader_PlayniteModernUI = "PlayniteModernUI";
                 settings.Settings.ConstantsLocation_PlayniteModernUI = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml";
                 ConstantsEdit.DKGThemeModifierDirectory(settings.Settings.ConstantsLocation_PlayniteModernUI, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
+                ConstantsEdit.Copy(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\Icons", PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\FilterIcons");
             }
 
             if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PS5ish_676e10ec-adfe-48d8-a1bd-4d5771b5a2ca\theme.yaml"))
@@ -318,14 +315,7 @@ namespace DKGThemeModifier
                 settings.Settings.IsThemeInstalled_EleganceFS = true;                
                 string ConstantsLocation_EleganceFS = PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_9ca210b3-db1c-4fdc-a555-96474a4fba49\Constants.xaml";
                 ConstantsEdit.DKGThemeModifierDirectory(ConstantsLocation_EleganceFS, PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier");
-            }
-            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Desktop\Elegance_37b0c944-eb21-462f-8df7-0b3acd6d1e68\theme.yaml"))
-            {
-                settings.Settings.IsThemeInstalled_EleganceDT = true;
-            }
-            if (File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_9ca210b3-db1c-4fdc-a555-96474a4fba49\theme.yaml") || File.Exists(PlayniteApi.Paths.ConfigurationPath + @"\Themes\Desktop\Elegance_37b0c944-eb21-462f-8df7-0b3acd6d1e68\theme.yaml"))
-            {
-                settings.Settings.IsThemeInstalledHeader_EleganceFS = "Elegance";
+                ConstantsEdit.Copy(PlayniteApi.Paths.ConfigurationPath + @"\DKGThemeModifier\FilterPresets\PlatformLogos", PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\Elegance_9ca210b3-db1c-4fdc-a555-96474a4fba49\Images\FilterLogos");
             }
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -84,6 +84,7 @@
 
                                         <TextBlock Text="My Colour" FontSize="22" />
                                         <StackPanel Orientation="Horizontal">
+                                            <RadioButton IsChecked="{Binding Settings.Colour0_EleganceFS}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_EleganceFS" Style="{DynamicResource ColourPicker_EleganceStyle}" Background="#4C515C"/>
                                             <RadioButton IsChecked="{Binding Settings.Colour1_EleganceFS}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_EleganceFS" Style="{DynamicResource ColourPicker_EleganceStyle}" Background="#34ACBC"/>
                                             <RadioButton IsChecked="{Binding Settings.Colour2_EleganceFS}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_EleganceFS" Style="{DynamicResource ColourPicker_EleganceStyle}" Background="#FF0000"/>
                                             <RadioButton IsChecked="{Binding Settings.Colour3_EleganceFS}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_EleganceFS" Style="{DynamicResource ColourPicker_EleganceStyle}" Background="#FFA500"/>
@@ -131,6 +132,7 @@
 
                                         <TextBlock Text="My Colour" FontSize="22" />
                                         <StackPanel Orientation="Horizontal">
+                                            <RadioButton IsChecked="{Binding Settings.Colour0_EleganceDT}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_EleganceDT" Style="{DynamicResource ColourPicker_EleganceStyle}" Background="#4C515C"/>
                                             <RadioButton IsChecked="{Binding Settings.Colour1_EleganceDT}" Margin="0,5,5,5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_EleganceDT" Style="{DynamicResource ColourPicker_EleganceStyle}" Background="#34ACBC"/>
                                             <RadioButton IsChecked="{Binding Settings.Colour2_EleganceDT}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_EleganceDT" Style="{DynamicResource ColourPicker_EleganceStyle}" Background="#FF0000"/>
                                             <RadioButton IsChecked="{Binding Settings.Colour3_EleganceDT}" Margin="5" HorizontalAlignment="Left" Width="30" Height="30" GroupName="ColourPicker_EleganceDT" Style="{DynamicResource ColourPicker_EleganceStyle}" Background="#FFA500"/>

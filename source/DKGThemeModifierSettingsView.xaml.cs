@@ -232,12 +232,12 @@ namespace DKGThemeModifier
         {
             using (WebClient webClient = new WebClient())
             {
-                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/PlayniteModernUI/raw/main/source/Constants.xaml"), PlayniteApi.Paths.ConfigurationPath + @"\Themes\Fullscreen\PlayniteModernUI_b600472c-c10c-4136-86d0-82bf0e576200\Constants.xaml");
-
-                PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
+                webClient.DownloadFileAsync(new Uri("https://github.com/davidkgriggs/PlayniteModernUI/raw/main/source/Constants.xaml"), SettingsModel.Settings.ConstantsLocation_PlayniteModernUI);
             }
 
             ConstantsEdit.RestoreDefaults(PlayniteApi.Paths.ConfigurationPath + @"\ExtensionsData\ee4ed2de-7e02-4447-8441-685d320b0520\config.json", "\"IsThemeInstalledHeader_PlayniteModernUI\": \"PlayniteModernUI\",", "\"IsThemeInstalled_PS5ish\"");
+
+            PlayniteApi.Dialogs.ShowMessage("Defaults Applied");
         }
 
         //DOWNLOAD ICONS FROM GITHUB
@@ -883,6 +883,7 @@ namespace DKGThemeModifier
                 string ReadConstatnts_PlayniteModernUI = File.ReadAllText(ConstantsLocation_EleganceFS);
 
                 //COLOUR PICKER
+                if (SettingsModel.Settings.Colour0_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "ECECEC", "4C515C", "ECECEC", "7A8192", "181A1E"); }
                 if (SettingsModel.Settings.Colour1_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "34ACBC", "065464", "34ACBC", "85C3CF", "11373C"); }
                 if (SettingsModel.Settings.Colour2_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "FF0000", "A40000", "FF0000", "EA6363", "4A1515"); }
                 if (SettingsModel.Settings.Colour3_EleganceFS == true) { ConstantsEdit.EleganceColours(ConstantsLocation_EleganceFS, "FFA500", "D18700", "FFA500", "CFAF85", "927030"); }
@@ -956,6 +957,7 @@ namespace DKGThemeModifier
                 string ReadConstatnts_PlayniteModernUI = File.ReadAllText(ConstantsLocation_EleganceDT);
 
                 //COLOUR PICKER
+                if (SettingsModel.Settings.Colour0_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "ECECEC", "4C515C", "C3C3C3", "ECECEC", "ECECEC", "88ECECEC", "C3C3C3", "4C515C"); }
                 if (SettingsModel.Settings.Colour1_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "34ACBC", "065464", "28818D", "34ACBC", "34ACBC", "8834ACBC", "28818D", "065464"); }
                 if (SettingsModel.Settings.Colour2_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "FF0000", "A40000", "AA2F2F", "FF0000", "FF0000", "88FF0000", "AA2F2F", "A40000"); }
                 if (SettingsModel.Settings.Colour3_EleganceDT == true) { ConstantsEdit.EleganceDTColours(ConstantsLocation_EleganceDT, "FFA500", "D18700", "CE9630", "FFA500", "FFA500", "88FFA500", "CE9630", "D18700"); }
